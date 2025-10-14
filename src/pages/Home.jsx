@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Section, { Container, Heading, Text } from "../components/Section";
 import Button from "../components/Button";
 import FeatureCard from "../components/Card/FeatureCard";
@@ -7,6 +7,32 @@ import HeroImage from "../assets/images/home/Home_hero.webp";
 import EconomicGrowthIcon from "../assets/icons/streamline-sharp-color--decent-work-and-economic-growth.svg";
 
 const Home = () => {
+  const location = useLocation();
+
+  // Handle navigation state and hash navigation when page loads
+  useEffect(() => {
+    // Check for navigation state from About page
+    if (location.state?.scrollTo === 'services') {
+      setTimeout(() => {
+        const servicesElement = document.getElementById('services');
+        if (servicesElement) {
+          servicesElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    
+    // Also check for hash navigation
+    const hash = window.location.hash;
+    if (hash === '#services') {
+      setTimeout(() => {
+        const servicesElement = document.getElementById('services');
+        if (servicesElement) {
+          servicesElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location.state]);
+
   const features = [
     {
       icon: (
@@ -146,7 +172,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <Section variant="content" className="relative overflow-hidden">
+      <Section variant="content" className="relative overflow-hidden" id="services">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>

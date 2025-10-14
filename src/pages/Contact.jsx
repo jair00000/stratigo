@@ -276,86 +276,212 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section 
-        className="w-full min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center"
+        className="w-full h-[70vh] bg-cover bg-center bg-no-repeat relative flex items-center"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
+        {/* Overlay */}
         <div className="absolute inset-0 bg-overlay"></div>
         
-        <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-6xl md:text-7xl mb-8">
-              Get in Touch
-            </Heading>
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-left text-white">
+              <div className="mb-6">
+                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
+                  Get in Touch
+                </Heading>
+                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                  Ready to grow your business?
+                </p>
+              </div>
+              
+              <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+                Contact us for a consultation or request a detailed quote for your project. We're here to help you succeed.
+              </Text>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={() => setActiveForm("contact")}
+                  className="bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+                >
+                  Contact Us
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => setActiveForm("quote")}
+                  className="bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300"
+                >
+                  Get a Quote
+                </button>
+              </div>
+            </div>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-xl leading-relaxed">
-              Ready to grow your business with strategic digital solutions? Contact us for a consultation or request a detailed quote for your project.
-            </Text>
+            {/* Right Side - Contact Info Cards */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {/* Contact Info 1 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-lg font-bold text-white mb-2">Email Us</div>
+                <div className="text-white/80 text-sm">hello@stratigo.io</div>
+              </div>
+
+              {/* Contact Info 2 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-lg font-bold text-white mb-2">Quick Response</div>
+                <div className="text-white/80 text-sm">Within 24 hours</div>
+              </div>
+
+              {/* Contact Info 3 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div className="text-lg font-bold text-white mb-2">Free Consultation</div>
+                <div className="text-white/80 text-sm">30-min strategy call</div>
+              </div>
+
+              {/* Contact Info 4 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-lg font-bold text-white mb-2">Expert Support</div>
+                <div className="text-white/80 text-sm">Dedicated team</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Form Selection */}
-      <Section variant="content" className="bg-gray-50">
-        <Container>
-          <div className="max-w-5xl mx-auto">
-            <div className="flex justify-center gap-4 mb-12">
-              <button
-                onClick={() => {
-                  setActiveForm("contact");
-                  setSubmitStatus(null);
-                }}
-                className={`px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 ${
-                  activeForm === "contact"
-                    ? "bg-electric text-white shadow-lg"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
-                }`}
-              >
-                Contact Us
-              </button>
-              <button
-                onClick={() => {
-                  setActiveForm("quote");
-                  setSubmitStatus(null);
-                }}
-                className={`px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 ${
-                  activeForm === "quote"
-                    ? "bg-electric text-white shadow-lg"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
-                }`}
-              >
-                Get a Quote
-              </button>
+      <Section variant="content" className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-electric/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <Container className="relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Form Tabs */}
+            <div className="flex justify-center mb-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-3 border border-white/50 shadow-lg">
+                <div className="flex gap-4">
+                  <button
+                    onClick={() => {
+                      setActiveForm("contact");
+                      setSubmitStatus(null);
+                    }}
+                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                      activeForm === "contact"
+                        ? "bg-gradient-to-r from-electric to-blue-600 text-white shadow-lg transform scale-105"
+                        : "text-gray-700 hover:text-electric hover:bg-white/50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                      Contact Us
+                    </div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveForm("quote");
+                      setSubmitStatus(null);
+                    }}
+                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                      activeForm === "quote"
+                        ? "bg-gradient-to-r from-electric to-blue-600 text-white shadow-lg transform scale-105"
+                        : "text-gray-700 hover:text-electric hover:bg-white/50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Get a Quote
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* Success Message */}
             {submitStatus && (
-              <div className={`mb-8 p-6 rounded-lg ${
-                submitStatus.type === "success" ? "bg-green-50 border border-green-200" : "bg-red-50 border border-red-200"
+              <div className={`mb-12 p-8 rounded-2xl border-2 shadow-lg backdrop-blur-sm ${
+                submitStatus.type === "success" 
+                  ? "bg-gradient-to-r from-green-50 to-green-100 border-green-200" 
+                  : "bg-gradient-to-r from-red-50 to-red-100 border-red-200"
               }`}>
-                <p className={`text-center font-medium ${
-                  submitStatus.type === "success" ? "text-green-800" : "text-red-800"
-                }`}>
-                  {submitStatus.message}
-                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                    submitStatus.type === "success" ? "bg-green-500" : "bg-red-500"
+                  }`}>
+                    {submitStatus.type === "success" ? (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    ) : (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    )}
+                  </div>
+                  <p className={`text-center font-semibold text-lg ${
+                    submitStatus.type === "success" ? "text-green-800" : "text-red-800"
+                  }`}>
+                    {submitStatus.message}
+                  </p>
+                </div>
               </div>
             )}
 
             {/* Contact Form */}
             {activeForm === "contact" && (
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <Heading level={2} className="text-3xl font-bold text-navy mb-4">
-                    Contact Form
-                  </Heading>
-                  <Text className="text-gray-600">
-                    Use this for general inquiries and quick callbacks
-                  </Text>
-                </div>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12 relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-electric/10 to-blue-400/10 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-blue-400/10 to-electric/10 rounded-full blur-2xl"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-12">
+                    <div className="inline-block mb-6">
+                      <span className="px-4 py-2 bg-electric/10 text-electric font-semibold rounded-full text-sm uppercase tracking-wider">
+                        Quick Contact
+                      </span>
+                    </div>
+                    <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
+                      Contact Form
+                    </Heading>
+                    <Text className="text-xl text-gray-600 max-w-2xl mx-auto">
+                      Use this for general inquiries and quick callbacks. We'll get back to you within 24 hours.
+                    </Text>
+                  </div>
 
-                <form onSubmit={handleContactSubmit} className="space-y-6">
+                <form onSubmit={handleContactSubmit} className="space-y-8">
                   {/* Full Name */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <div className="group">
+                    <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                      <svg className="w-4 h-4 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -363,13 +489,18 @@ const Contact = () => {
                       name="fullName"
                       value={contactForm.fullName}
                       onChange={handleContactChange}
-                      placeholder="Jair Rivera"
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-electric focus:border-transparent ${
-                        contactErrors.fullName ? "border-red-500" : "border-gray-300"
+                      placeholder="Enter your full name"
+                      className={`w-full px-6 py-4 border-2 rounded-xl focus:ring-4 focus:ring-electric/20 focus:border-electric transition-all duration-300 bg-white/50 backdrop-blur-sm ${
+                        contactErrors.fullName ? "border-red-500 bg-red-50/50" : "border-gray-200 hover:border-gray-300"
                       }`}
                     />
                     {contactErrors.fullName && (
-                      <p className="mt-1 text-sm text-red-500">{contactErrors.fullName}</p>
+                      <p className="mt-2 text-sm text-red-600 flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {contactErrors.fullName}
+                      </p>
                     )}
                   </div>
 
@@ -389,22 +520,30 @@ const Contact = () => {
                   </div>
 
                   {/* Email */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email <span className="text-red-500">*</span>
+                  <div className="group">
+                    <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                      <svg className="w-4 h-4 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       name="email"
                       value={contactForm.email}
                       onChange={handleContactChange}
-                      placeholder="stratigo@company.com"
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-electric focus:border-transparent ${
-                        contactErrors.email ? "border-red-500" : "border-gray-300"
+                      placeholder="your.email@company.com"
+                      className={`w-full px-6 py-4 border-2 rounded-xl focus:ring-4 focus:ring-electric/20 focus:border-electric transition-all duration-300 bg-white/50 backdrop-blur-sm ${
+                        contactErrors.email ? "border-red-500 bg-red-50/50" : "border-gray-200 hover:border-gray-300"
                       }`}
                     />
                     {contactErrors.email && (
-                      <p className="mt-1 text-sm text-red-500">{contactErrors.email}</p>
+                      <p className="mt-2 text-sm text-red-600 flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {contactErrors.email}
+                      </p>
                     )}
                   </div>
 
@@ -535,26 +674,43 @@ const Contact = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="pt-4">
-                    <Button type="submit" variant="primary" className="w-full text-lg py-4">
+                  <div className="pt-8">
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-5 px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
+                    >
+                      <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
                       Send Message
-                    </Button>
+                    </button>
                   </div>
                 </form>
+                </div>
               </div>
             )}
 
             {/* Quote Form */}
             {activeForm === "quote" && (
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <Heading level={2} className="text-3xl font-bold text-navy mb-4">
-                    Get a Quote
-                  </Heading>
-                  <Text className="text-gray-600">
-                    Project intake for scoping and estimating
-                  </Text>
-                </div>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12 relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-electric/10 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-electric/10 to-blue-400/10 rounded-full blur-2xl"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-12">
+                    <div className="inline-block mb-6">
+                      <span className="px-4 py-2 bg-blue-400/10 text-blue-600 font-semibold rounded-full text-sm uppercase tracking-wider">
+                        Project Quote
+                      </span>
+                    </div>
+                    <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
+                      Get a Quote
+                    </Heading>
+                    <Text className="text-xl text-gray-600 max-w-2xl mx-auto">
+                      Detailed project intake for accurate scoping and estimating. We'll review your requirements and provide a comprehensive quote within one business day.
+                    </Text>
+                  </div>
 
                 <form onSubmit={handleQuoteSubmit} className="space-y-8">
                   {/* 1) About You */}
@@ -1131,17 +1287,24 @@ const Contact = () => {
                       </div>
 
                       {/* Submit Button */}
-                      <div className="pt-4">
-                        <Button type="submit" variant="primary" className="w-full text-lg py-4">
+                      <div className="pt-8">
+                        <button
+                          type="submit"
+                          className="w-full bg-gradient-to-r from-blue-600 to-electric hover:from-blue-600/90 hover:to-electric/90 text-white font-bold py-5 px-8 rounded-xl shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
+                        >
+                          <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
                           Request Quote
-                        </Button>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </form>
+                </div>
               </div>
             )}
-    </div>
+          </div>
         </Container>
       </Section>
     </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import StratigoLogo from '../../assets/logos/stratigologo1.png';
+import StratigoLogo from '../../assets/logos/stratigo-logo.svg';
 
 const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);

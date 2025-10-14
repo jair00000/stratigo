@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Section, { Container, Heading, Text } from "../components/Section";
 import Button from "../components/Button";
 import HeroImage from "../assets/images/home/Home_hero.webp";
@@ -6,73 +7,146 @@ import HeroImage from "../assets/images/home/Home_hero.webp";
 const Marketing = () => {
   return (
     <>
-      {/* Hero Section */}
+      <Helmet>
+        <title>Marketing Solutions for Small Businesses | Contractor & Manufacturer Marketing – Stratigo</title>
+        <meta name="description" content="Stratigo's Marketing Solutions help contractors, manufacturers, and service-based businesses grow their digital presence. SEO, content marketing, local visibility, and data-driven strategies that deliver real results." />
+        <meta name="keywords" content="marketing solutions for small businesses, contractor digital marketing, SEO for manufacturers, service business marketing strategy, business growth solutions" />
+      </Helmet>
+
+      {/* Hero Section - Modern Design */}
       <section 
-        className="w-full min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center"
+        className="w-full h-[70vh] bg-cover bg-center bg-no-repeat relative flex items-center"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-overlay"></div>
         
         {/* Content */}
-        <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-6xl md:text-7xl mb-8">
-              Marketing Solutions
-            </Heading>
-            
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-xl leading-relaxed mb-4">
-              Strategic Marketing Built for Real-World Businesses
-            </Text>
-            
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-lg leading-relaxed opacity-90">
-              At Stratigo, we combine creativity, analytics, and technology to help businesses grow with purpose.
-            </Text>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-left text-white">
+              <div className="mb-6">
+                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
+                  Marketing Solutions
+                </Heading>
+                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                  Strategic Marketing Built for Real-World Businesses
+                </p>
+              </div>
+              
+              <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+                At Stratigo, we combine creativity, analytics, and technology to help businesses grow with purpose.
+              </Text>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button variant="primary">
-                Get Started
-              </Button>
-              <Button variant="secondary">
-                Learn More
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="primary" className="w-full sm:w-auto">
+                  Get Started
+                </Button>
+                <Button variant="secondary" className="w-full sm:w-auto">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Side - Stats Cards */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {/* Stat 1 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">SEO</div>
+                <div className="text-white/80 text-sm">Search Optimization</div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">Local</div>
+                <div className="text-white/80 text-sm">Market Visibility</div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">Content</div>
+                <div className="text-white/80 text-sm">Strategy & Creation</div>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">Data</div>
+                <div className="text-white/80 text-sm">Analytics & Insights</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Introduction Section */}
-      <Section variant="content">
+      <Section variant="content" className="relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        
         <Container>
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            {/* Badge */}
+            <div className="inline-block mb-6">
+              <span className="px-4 py-2 bg-electric/10 text-electric font-semibold rounded-full text-sm uppercase tracking-wider">
+                Who We Help
+              </span>
+            </div>
+
+            {/* Title */}
+            <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-8">
+              Marketing That Drives Real Growth
+            </Heading>
+
+            {/* Description */}
             <Text className="text-xl text-gray-700 leading-relaxed mb-6">
-              Our Marketing Solutions are built for contractors, manufacturers, and service-based businesses that want to increase visibility, attract qualified leads, and strengthen their brand in the digital space.
+              At Stratigo, our Marketing Solutions are designed for contractors, manufacturers, and service-based businesses that want to grow their digital presence and attract high-quality leads. We help businesses build visibility, credibility, and growth through strategic marketing.
             </Text>
             <Text className="text-lg text-gray-600 leading-relaxed">
-              We don't believe in guesswork — every strategy we design is data-driven, measurable, and goal-oriented.
+              Every strategy we create is guided by research and performance data. From SEO and content marketing to local visibility and analytics, our goal is to connect your brand with the right audience and deliver results that drive real business success.
             </Text>
           </div>
         </Container>
       </Section>
 
       {/* Our Approach Section */}
-      <Section variant="content" className="bg-gray-50">
+      <Section variant="content" className="bg-blue-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+
         <Container>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-16">
+              {/* Badge */}
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-electric/10 text-electric font-semibold rounded-full text-sm uppercase tracking-wider">
+                  Our Process
+                </span>
+              </div>
+
               <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
                 Our Approach
               </Heading>
               <Text className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                We focus on clarity, precision, and long-term growth. Every marketing campaign begins with understanding your business goals and your market — then we build strategies that convert traffic into customers.
+              We focus on clarity, precision, and growth. Every marketing campaign begins with understanding your business goals and your audience. We develop strategies that increase visibility, attract leads, and convert visitors into clients.
               </Text>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Step 1 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-electric rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-electric/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -right-3 w-10 h-10 bg-electric rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  1
+                </div>
+
+                <div className="w-20 h-20 bg-gradient-to-br from-electric to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -85,9 +159,17 @@ const Marketing = () => {
               </div>
 
               {/* Step 2 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-orange rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-orange/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -right-3 w-10 h-10 bg-orange rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  2
+                </div>
+
+                <div className="w-20 h-20 bg-gradient-to-br from-orange to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
@@ -101,9 +183,17 @@ const Marketing = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-coral rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-coral/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -right-3 w-10 h-10 bg-coral rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  3
+                </div>
+
+                <div className="w-20 h-20 bg-gradient-to-br from-coral to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
@@ -116,9 +206,17 @@ const Marketing = () => {
               </div>
 
               {/* Step 4 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Step Number Badge */}
+                <div className="absolute -top-3 -right-3 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                  4
+                </div>
+
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -135,21 +233,38 @@ const Marketing = () => {
       </Section>
 
       {/* What We Offer Section */}
-      <Section variant="content">
+      <Section variant="content" className="relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
         <Container>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-16">
+              {/* Badge */}
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-orange/10 text-orange font-semibold rounded-full text-sm uppercase tracking-wider">
+                  Our Services
+                </span>
+              </div>
+
               <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
                 What We Offer
               </Heading>
+              <Text className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                Comprehensive marketing solutions designed to help your business grow, attract leads, and build lasting visibility.
+              </Text>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* SEO */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-electric/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 <div className="flex items-start mb-6">
-                  <div className="w-12 h-12 bg-electric rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-electric to-blue-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
@@ -165,10 +280,13 @@ const Marketing = () => {
               </div>
 
               {/* Local Marketing */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 <div className="flex items-start mb-6">
-                  <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange to-red-500 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -185,10 +303,13 @@ const Marketing = () => {
               </div>
 
               {/* Content Strategy */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-coral/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 <div className="flex items-start mb-6">
-                  <div className="w-12 h-12 bg-coral rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-coral to-pink-500 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                   </div>
@@ -204,10 +325,13 @@ const Marketing = () => {
               </div>
 
               {/* Analytics */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 <div className="flex items-start mb-6">
-                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
@@ -227,20 +351,37 @@ const Marketing = () => {
       </Section>
 
       {/* Why Choose Stratigo Marketing Section */}
-      <Section variant="content" className="bg-gray-50">
+      <Section variant="content" className="bg-blue-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-coral/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
         <Container>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-16">
+              {/* Badge */}
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-coral/10 text-coral font-semibold rounded-full text-sm uppercase tracking-wider">
+                  Why Choose Us
+                </span>
+              </div>
+
               <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
                 Why Choose Stratigo Marketing
               </Heading>
+              <Text className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                Partner with a team that combines industry expertise, data-driven strategies, and a commitment to your long-term success.
+              </Text>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Feature 1 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-electric rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-electric/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="w-20 h-20 bg-gradient-to-br from-electric to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -253,9 +394,12 @@ const Marketing = () => {
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-orange rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-orange/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="w-20 h-20 bg-gradient-to-br from-orange to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -268,9 +412,12 @@ const Marketing = () => {
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-coral rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-coral/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="w-20 h-20 bg-gradient-to-br from-coral to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
@@ -283,9 +430,12 @@ const Marketing = () => {
               </div>
 
               {/* Feature 4 */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center relative group">
+                {/* Individual blur element */}
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -302,34 +452,117 @@ const Marketing = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section variant="content" className="bg-gradient-to-br from-electric to-blue-600 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Section variant="content" className="bg-gradient-to-br from-navy via-navy/95 to-electric py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
-        </div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-coral/5 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
 
         <Container>
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
-            <div className="mb-12">
-              <Heading level={2} className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Start Growing with Stratigo
+            <div className="mb-16">
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full text-sm uppercase tracking-wider border border-white/20">
+                  Get Started Today
+                </span>
+              </div>
+              <Heading level={2} className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                Ready to Grow Your Brand?
               </Heading>
-              <Text className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Ready to attract more clients, improve visibility, and grow your brand?
+              <Text className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed">
+                Your business deserves a marketing partner that delivers measurable growth and lasting visibility.
               </Text>
               <Text className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                Let's build a marketing system that delivers real results.
+                At Stratigo, we combine SEO expertise, content strategy, and data-driven campaigns to help your brand reach the right audience.
               </Text>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button variant="primary" className="bg-white hover:bg-gray-100 text-electric font-semibold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 text-lg">
-                Book a Consultation
-              </Button>
-              <Button variant="secondary" className="bg-transparent hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg border-2 border-white hover:border-white/80 transition-all duration-200 text-lg">
-                Contact Us
-              </Button>
+            {/* Feature Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 bg-orange/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <Text className="text-white font-semibold mb-2">SEO Excellence</Text>
+                <Text className="text-white/70 text-sm">Rank higher and attract qualified leads</Text>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <Text className="text-white font-semibold mb-2">Data-Driven Strategy</Text>
+                <Text className="text-white/70 text-sm">Every campaign backed by analytics</Text>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <Text className="text-white font-semibold mb-2">Proven Growth</Text>
+                <Text className="text-white/70 text-sm">200%+ average traffic increase</Text>
+              </div>
+            </div>
+
+            {/* Main CTA */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-10 border border-white/20">
+              <Text className="text-xl md:text-2xl text-white mb-8 font-medium">
+                Let's build a marketing system that brings you visibility, credibility, and consistent growth.
+              </Text>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button variant="primary" className="bg-orange hover:bg-orange/90 text-white font-semibold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg group">
+                  <span className="flex items-center gap-2">
+                    Book a Consultation
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </Button>
+                <Button variant="secondary" className="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 text-lg backdrop-blur-sm">
+                  Contact Stratigo
+                </Button>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-white/80">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-white">hello@stratigo.io</div>
+                  <div className="text-sm">Marketing Inquiries</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-white">Free Strategy Call</div>
+                  <div className="text-sm">30-minute marketing audit</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-white">Quick Response</div>
+                  <div className="text-sm">24-hour initial consultation</div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
