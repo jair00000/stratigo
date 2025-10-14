@@ -1,0 +1,446 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Design Patterns */
+@layer components {
+  .btn-primary {
+    @apply bg-electric hover:bg-electric-dark text-white font-semibold py-3 px-8 rounded-lg shadow-button hover:shadow-button-hover transform hover:scale-105 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-electric font-semibold py-3 px-8 rounded-lg shadow-button hover:shadow-button-hover border-2 border-electric transform hover:scale-105 transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent hover:bg-electric text-electric hover:text-white font-semibold py-3 px-8 rounded-lg border-2 border-electric transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white p-8 rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300;
+  }
+  
+  .card-feature {
+    @apply card text-center;
+  }
+  
+  .section-hero {
+    @apply w-full bg-bg py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-content {
+    @apply w-full bg-white py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .heading-hero {
+    @apply text-hero font-bold text-navy mb-6;
+  }
+  
+  .heading-section {
+    @apply text-section-title font-bold text-navy mb-8 text-center;
+  }
+  
+  .heading-card {
+    @apply text-card-title font-semibold text-text-dark mb-4;
+  }
+  
+  .text-hero {
+    @apply text-xl text-text-secondary max-w-3xl mx-auto mb-12;
+  }
+  
+  .text-body {
+    @apply text-text-secondary;
+  }
+  
+  .icon-circle {
+    @apply w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6;
+  }
+  
+  .icon-circle-electric {
+    @apply icon-circle bg-electric-light;
+  }
+  
+  .icon-circle-orange {
+    @apply icon-circle bg-orange;
+  }
+  
+  .icon-circle-coral {
+    @apply icon-circle bg-coral;
+  }
+  
+  .container-center {
+    @apply text-center;
+  }
+  
+  .grid-features {
+    @apply grid md:grid-cols-3 gap-8 w-full;
+  }
+  
+  .grid-cards {
+    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  .flex-buttons {
+    @apply flex flex-col sm:flex-row gap-4 justify-center;
+  }
+
+  /* Hosting Page Specific Styles */
+  
+  /* Pricing Card Styles */
+  .pricing-card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col;
+  }
+  
+  .pricing-card-featured {
+    @apply bg-white rounded-2xl shadow-xl border-2 border-electric p-8 hover:shadow-2xl transition-shadow duration-300 relative flex flex-col;
+  }
+  
+  .pricing-card-badge {
+    @apply absolute -top-4 left-1/2 transform -translate-x-1/2 bg-electric text-white px-4 py-2 rounded-full text-sm font-semibold;
+  }
+  
+  .pricing-card-title {
+    @apply text-2xl font-bold text-navy mb-2;
+  }
+  
+  .pricing-card-price {
+    @apply text-4xl font-bold text-electric mb-2;
+  }
+  
+  .pricing-card-period {
+    @apply text-lg text-gray-500;
+  }
+  
+  .pricing-card-savings {
+    @apply text-sm text-green-600 font-semibold mb-2;
+  }
+  
+  .pricing-card-description {
+    @apply text-gray-600;
+  }
+  
+  /* Toggle Switch Styles */
+  .toggle-switch {
+    @apply relative w-11 h-6 bg-gray-200 rounded-full cursor-pointer;
+  }
+  
+  .toggle-switch-active {
+    @apply absolute inset-0 bg-blue-600 rounded-full;
+  }
+  
+  .toggle-switch-knob {
+    @apply absolute top-0.5 w-5 h-5 bg-white border border-gray-300 rounded-full transition-all duration-200 z-10;
+  }
+  
+  /* Feature List Styles */
+  .feature-list {
+    @apply space-y-4 mb-8 flex-grow;
+  }
+  
+  .feature-item {
+    @apply flex items-center;
+  }
+  
+  .feature-icon {
+    @apply w-5 h-5 text-electric mr-3;
+  }
+  
+  .feature-text {
+    @apply text-gray-700;
+  }
+  
+  /* FAQ / Accordion Styles */
+  .accordion-item {
+    @apply bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .accordion-button {
+    @apply w-full p-6 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200 border-0;
+  }
+  
+  .accordion-icon-wrapper {
+    @apply w-10 h-10 bg-electric/10 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm;
+  }
+  
+  .accordion-icon {
+    @apply w-5 h-5 text-electric;
+  }
+  
+  .accordion-title {
+    @apply text-lg font-semibold text-navy pr-4;
+  }
+  
+  .accordion-chevron {
+    @apply w-6 h-6 text-electric transition-transform duration-200;
+  }
+  
+  .accordion-content {
+    @apply overflow-hidden transition-all duration-300;
+  }
+  
+  .accordion-content-inner {
+    @apply px-6 pb-6 bg-gray-50;
+  }
+  
+  .accordion-answer {
+    @apply text-gray-700 leading-relaxed;
+  }
+  
+  /* Info Card Styles */
+  .info-card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-200 p-8;
+  }
+  
+  .info-card-header {
+    @apply flex items-center mb-6;
+  }
+  
+  .info-card-icon-wrapper {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center mr-4;
+  }
+  
+  .info-card-title {
+    @apply text-2xl font-bold text-navy;
+  }
+  
+  .info-card-text {
+    @apply text-gray-600;
+  }
+  
+  /* Table Styles */
+  .comparison-table {
+    @apply w-full;
+  }
+  
+  .comparison-table-header {
+    @apply bg-gray-50;
+  }
+  
+  .comparison-table-cell {
+    @apply px-6 py-4 text-sm text-gray-900 font-medium;
+  }
+  
+  .comparison-table-cell-center {
+    @apply px-6 py-4 text-center;
+  }
+  
+  .comparison-table-row {
+    @apply hover:bg-gray-50;
+  }
+  
+  .comparison-table-icon-text {
+    @apply flex items-center gap-2;
+  }
+  
+  /* Hero Section Styles */
+  .hero-section {
+    @apply w-full min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-overlay;
+  }
+  
+  .hero-content {
+    @apply relative z-10 w-full flex items-center justify-center;
+  }
+  
+  .hero-content-inner {
+    @apply max-w-4xl text-center text-white px-12;
+  }
+  
+  /* CTA Section Styles */
+  .cta-section {
+    @apply w-full bg-gradient-to-br from-electric to-blue-600 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden;
+  }
+  
+  .cta-decorative-bg {
+    @apply absolute inset-0 opacity-10;
+  }
+  
+  .cta-circle-top {
+    @apply absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2;
+  }
+  
+  .cta-circle-bottom {
+    @apply absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2;
+  }
+  
+  .cta-content {
+    @apply relative z-10 max-w-6xl mx-auto text-center text-white;
+  }
+  
+  .cta-title-wrapper {
+    @apply flex items-center justify-center gap-4 mb-6;
+  }
+  
+  .cta-title {
+    @apply text-4xl md:text-5xl font-bold text-white;
+  }
+  
+  .cta-subtitle {
+    @apply text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed;
+  }
+  
+  .cta-feature-box {
+    @apply bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-10;
+  }
+  
+  .cta-exclusive-box {
+    @apply bg-navy/30 backdrop-blur-sm rounded-xl p-6 mb-10 border border-white/20;
+  }
+  
+  .cta-button {
+    @apply bg-white hover:bg-gray-100 text-electric font-semibold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200;
+  }
+  
+  /* Icon Styles */
+  .icon-sm {
+    @apply w-5 h-5;
+  }
+  
+  .icon-md {
+    @apply w-6 h-6;
+  }
+  
+  .icon-lg {
+    @apply w-8 h-8;
+  }
+  
+  .icon-xl {
+    @apply w-12 h-12;
+  }
+  
+  /* Utility Badge */
+  .plan-badge {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  /* Service Cards Specific Styles */
+  .service-card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 flex flex-col h-full justify-between;
+  }
+
+  .service-card-icon {
+    @apply w-14 h-14 rounded-lg flex items-center justify-center mb-2;
+  }
+
+  .service-card-title {
+    @apply text-2xl font-bold text-navy text-center mb-2;
+  }
+
+  .service-card-description {
+    @apply text-gray-700 leading-relaxed flex-grow mb-0;
+  }
+
+  .service-card-includes {
+    @apply bg-blue-50 border border-blue-200 rounded-lg p-4 h-full min-h-[160px] flex flex-col mb-0 flex-grow;
+  }
+
+  .service-card-includes-title {
+    @apply text-sm font-bold text-blue-800 uppercase tracking-wider mb-3 text-left;
+  }
+
+  .service-card-includes-list {
+    @apply space-y-2 flex-grow;
+  }
+
+  .service-card-includes-item {
+    @apply flex items-start;
+  }
+
+  .service-card-includes-icon {
+    @apply w-4 h-4 text-blue-600 mr-3 flex-shrink-0 mt-0.5;
+  }
+
+  .service-card-includes-text {
+    @apply text-blue-700 text-sm leading-relaxed;
+  }
+
+  .service-card-button {
+    @apply mt-auto;
+  }
+
+  /* Responsive Grid Improvements */
+  .service-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-end;
+  }
+
+  @media (max-width: 768px) {
+    .service-grid {
+      @apply gap-6;
+    }
+    
+    .service-card {
+      @apply p-6;
+    }
+  }
+}
