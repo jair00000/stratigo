@@ -1,0 +1,8 @@
+{
+  "name": "stratigo-email-server",
+  "version": "1.0.0",
+  "description": "Email API server for Stratigo website",
+  "main": "index.js",
+  "type": "commonjs"
+}
+

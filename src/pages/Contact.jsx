@@ -114,7 +114,7 @@ const Contact = () => {
     return errors;
   };
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
     const errors = validateContactForm();
     
@@ -123,26 +123,59 @@ const Contact = () => {
       return;
     }
     
-    // Submit form (integrate with your backend)
-    console.log("Contact Form Submitted:", contactForm);
-    setSubmitStatus({
-      type: "success",
-      message: "Thanks for contacting Stratigo. Your request has been received and our team will respond within one business day."
-    });
-    
-    // Reset form
-    setContactForm({
-      fullName: "",
-      company: "",
-      email: "",
-      phone: "",
-      website: "",
-      helpType: "",
-      message: "",
-      consent: false,
-      file: null
-    });
-    setContactErrors({});
+    // Submit form to backend API
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: contactForm.fullName,
+          company: contactForm.company,
+          email: contactForm.email,
+          phone: contactForm.phone,
+          website: contactForm.website,
+          helpType: contactForm.helpType,
+          message: contactForm.message,
+          consent: contactForm.consent
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: "success",
+          message: data.message
+        });
+        
+        // Reset form
+        setContactForm({
+          fullName: "",
+          company: "",
+          email: "",
+          phone: "",
+          website: "",
+          helpType: "",
+          message: "",
+          consent: false,
+          file: null
+        });
+        setContactErrors({});
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.message || "Failed to send your message. Please try again."
+        });
+      }
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to send your message. Please try again or email us directly at hello@stratigo.io"
+      });
+    }
   };
 
   // Quote Form Handlers
@@ -220,7 +253,7 @@ const Contact = () => {
     return errors;
   };
 
-  const handleQuoteSubmit = (e) => {
+  const handleQuoteSubmit = async (e) => {
     e.preventDefault();
     const errors = validateQuoteForm();
     
@@ -229,39 +262,63 @@ const Contact = () => {
       return;
     }
     
-    // Submit form (integrate with your backend)
-    console.log("Quote Form Submitted:", quoteForm);
-    setSubmitStatus({
-      type: "success",
-      message: "Thanks for requesting a quote. Our team will review your scope and email you next steps and an estimated timeline within one business day."
-    });
-    
-    // Reset form
-    setQuoteForm({
-      fullName: "",
-      company: "",
-      role: "",
-      email: "",
-      phone: "",
-      location: "",
-      serviceType: [],
-      projectType: "",
-      projectSummary: "",
-      keyFeatures: [],
-      currentAssets: [],
-      integrations: "",
-      needsHosting: "",
-      traffic: "",
-      dataSensitivity: "",
-      backupPreference: "",
-      budget: "",
-      startDate: "",
-      launchWindow: "",
-      file: null,
-      hearAbout: "",
-      consent: false
-    });
-    setQuoteErrors({});
+    // Submit form to backend API
+    try {
+      const response = await fetch('http://localhost:3001/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(quoteForm),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: "success",
+          message: data.message
+        });
+        
+        // Reset form
+        setQuoteForm({
+          fullName: "",
+          company: "",
+          role: "",
+          email: "",
+          phone: "",
+          location: "",
+          serviceType: [],
+          projectType: "",
+          projectSummary: "",
+          keyFeatures: [],
+          currentAssets: [],
+          integrations: "",
+          needsHosting: "",
+          traffic: "",
+          dataSensitivity: "",
+          backupPreference: "",
+          budget: "",
+          startDate: "",
+          launchWindow: "",
+          file: null,
+          hearAbout: "",
+          consent: false
+        });
+        setQuoteErrors({});
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.message || "Failed to submit your quote request. Please try again."
+        });
+      }
+    } catch (error) {
+      console.error("Quote form submission error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to submit your quote request. Please try again or email us directly at hello@stratigo.io"
+      });
+    }
   };
 
   return (
