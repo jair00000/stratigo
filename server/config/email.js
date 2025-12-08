@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
  * Uses your Microsoft 365 Business Standard account
  */
 const createTransporter = () => {
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     host: 'smtp.office365.com',
     port: 587,
     secure: false, // Use STARTTLS
@@ -48,7 +48,7 @@ const verifyEmailConfig = async () => {
 /**
  * Send email using Microsoft 365 SMTP
  */
-const sendEmail = async ({ to, subject, html, text, replyTo }) => {
+const sendEmail = async ({ to, subject, html, text, replyTo, attachments }) => {
   try {
     const transporter = createTransporter();
     
@@ -60,6 +60,11 @@ const sendEmail = async ({ to, subject, html, text, replyTo }) => {
       text,
       replyTo: replyTo || emailAddresses.hello
     };
+
+    // Add attachments if provided
+    if (attachments && attachments.length > 0) {
+      mailOptions.attachments = attachments;
+    }
 
     const info = await transporter.sendMail(mailOptions);
     console.log('✅ Email sent successfully:', info.messageId);

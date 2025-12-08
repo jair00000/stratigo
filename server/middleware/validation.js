@@ -65,12 +65,12 @@ const validateContactForm = (req, res, next) => {
     errors.push('Please select how we can help');
   }
 
-  if (!message || message.trim().length < 50) {
-    errors.push('Message must be at least 50 characters');
+  if (!message || message.trim().length === 0) {
+    errors.push('Message is required');
   }
-
-  if (message && message.trim().length > 2000) {
-    errors.push('Message must not exceed 2000 characters');
+  
+  if (message && message.trim().length > 5000) {
+    errors.push('Message must not exceed 5000 characters');
   }
 
   if (!consent) {
@@ -130,8 +130,8 @@ const validateQuoteForm = (req, res, next) => {
     errors.push('At least one service type is required');
   }
 
-  if (!projectSummary || projectSummary.trim().length < 50) {
-    errors.push('Project summary must be at least 50 characters');
+  if (!projectSummary || projectSummary.trim().length === 0) {
+    errors.push('Project summary is required');
   }
 
   if (!needsHosting) {

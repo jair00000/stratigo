@@ -19,7 +19,7 @@ const About = () => {
   return (
     <>
       {/* Modern Hero Section */}
-      <section className="h-[70vh] bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden">
+      <section className="min-h-[60vh] sm:min-h-[70vh] bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden py-8 sm:py-0">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -37,33 +37,33 @@ const About = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-center py-8 sm:py-12">
           <Container>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {/* Left Content */}
               <div className="text-left">
-                <Heading level={1} className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
+                <Heading level={1} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 sm:mb-6 leading-tight">
                   About Stratigo
                 </Heading>
                 
-                <Text className="text-xl text-gray-700 mb-8 leading-relaxed">
+                <Text className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed">
                   Where technology and strategy unite to create meaningful growth for businesses. We're your strategic growth partner in the digital world.
                 </Text>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button 
                     variant="primary" 
-                    className="bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+                    className="bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base"
                     onClick={scrollToContact}
                   >
                     Get in Touch
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Button>
                   <Button 
                     variant="secondary" 
-                    className="bg-white/20 hover:bg-white/30 text-navy font-semibold py-4 px-8 rounded-xl backdrop-blur-sm border border-navy/30 hover:border-navy/50 transform hover:scale-105 transition-all duration-300"
+                    className="bg-white/20 hover:bg-white/30 text-navy font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl backdrop-blur-sm border border-navy/30 hover:border-navy/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
                     onClick={navigateToServices}
                   >
                     Our Services
@@ -72,46 +72,46 @@ const About = () => {
               </div>
 
               {/* Right Side - Stats Cards */}
-              <div className="grid grid-cols-2 gap-6 relative z-20">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 relative z-20">
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-2">Quality</h3>
-                  <p className="text-gray-600 font-medium">Premium Service Quality</p>
+                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-navy mb-1 sm:mb-2">Quality</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium leading-tight">Premium Service Quality</p>
                 </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-2">24/7</h3>
-                  <p className="text-gray-600 font-medium">Expert Support</p>
+                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-navy mb-1 sm:mb-2">24/7</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium leading-tight">Expert Support</p>
                 </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-electric to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-electric to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-2">100%</h3>
-                  <p className="text-gray-600 font-medium">Guaranteed Project Delivery</p>
+                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-navy mb-1 sm:mb-2">100%</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium leading-tight">Guaranteed Project Delivery</p>
                 </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-2">Growth</h3>
-                  <p className="text-gray-600 font-medium">Business Growth Focus</p>
+                  <h3 className="text-base sm:text-lg md:text-2xl font-bold text-navy mb-1 sm:mb-2">Growth</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium leading-tight">Business Growth Focus</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ const About = () => {
 
         <Container className="relative z-10">
           {/* About Stratigo */}
-          <div className="max-w-4xl mx-auto text-center mb-20">
+          <div className="max-w-4xl mx-auto mb-20">
             {/* Badge */}
             <div className="text-center mb-6">
               <span className="px-4 py-2 bg-electric/10 text-electric font-semibold rounded-full text-sm uppercase tracking-wider">
@@ -137,22 +137,22 @@ const About = () => {
               </span>
             </div>
 
-            <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-8">
+            <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-8 text-center">
               Who We Are
             </Heading>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/50 shadow-lg">
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p className="flex items-start gap-4">
-                  <svg className="w-6 h-6 text-electric flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-12 border border-white/50 shadow-lg">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed text-left">
+                <p className="flex items-start gap-3 sm:gap-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-electric flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  At Stratigo, we believe that technology and strategy move forward together. We are a team of thinkers, builders, and creators dedicated to helping businesses achieve meaningful growth through Marketing Solutions, Software Development, and Hosting Services.
+                  <span>At Stratigo, we believe that technology and strategy move forward together. We are a team of thinkers, builders, and creators dedicated to helping businesses achieve meaningful growth through Marketing Solutions, Software Development, and Hosting Services.</span>
                 </p>
-                <p>
+                <p className="text-left">
                   In today's fast-evolving digital marketplace, a brand's online presence defines its credibility. That's why we design solutions that go beyond appearance — delivering systems built for performance, security, and measurable business impact. Every project we create is guided by precision, transparency, and collaboration, ensuring long-term value for our clients.
                 </p>
-                <p>
+                <p className="text-left">
                   More than just a service provider, Stratigo is your strategic growth partner. We work side by side with businesses to transform ideas into measurable results. Through innovation, trust, and technical excellence, we empower brands to scale confidently and succeed in the global digital economy.
                 </p>
               </div>

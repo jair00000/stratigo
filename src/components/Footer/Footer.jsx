@@ -225,18 +225,18 @@ const Footer = () => {
                 Strategies, product updates, and best practices for growing your business online.
               </p>
               <form onSubmit={handleSubscribe} className="space-y-3">
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-electric focus:border-transparent"
+                    className="flex-1 w-full sm:w-auto px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-electric focus:border-transparent"
                     required
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-electric hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors"
+                    className="w-full sm:w-auto px-6 py-3 bg-electric hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors whitespace-nowrap"
                   >
                     Subscribe
                   </button>

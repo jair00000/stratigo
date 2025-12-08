@@ -107,8 +107,7 @@ const Contact = () => {
     if (contactForm.phone && !validatePhone(contactForm.phone)) errors.phone = "Invalid phone format";
     if (!contactForm.helpType) errors.helpType = "Please select a service type";
     if (!contactForm.message.trim()) errors.message = "Message is required";
-    else if (contactForm.message.length < 300) errors.message = "Message must be at least 300 characters";
-    else if (contactForm.message.length > 800) errors.message = "Message must not exceed 800 characters";
+    else if (contactForm.message.length > 2000) errors.message = "Message must not exceed 2000 characters";
     if (!contactForm.consent) errors.consent = "You must agree to be contacted";
     
     return errors;
@@ -125,6 +124,22 @@ const Contact = () => {
     
     // Submit form to backend API
     try {
+      // Convert file to base64 if exists
+      let fileData = null;
+      if (contactForm.file) {
+        const reader = new FileReader();
+        fileData = await new Promise((resolve, reject) => {
+          reader.onload = () => resolve({
+            name: contactForm.file.name,
+            type: contactForm.file.type,
+            size: contactForm.file.size,
+            data: reader.result.split(',')[1] // Remove data:type;base64, prefix
+          });
+          reader.onerror = reject;
+          reader.readAsDataURL(contactForm.file);
+        });
+      }
+
       const response = await fetch('http://localhost:3001/api/contact', {
         method: 'POST',
         headers: {
@@ -138,7 +153,8 @@ const Contact = () => {
           website: contactForm.website,
           helpType: contactForm.helpType,
           message: contactForm.message,
-          consent: contactForm.consent
+          consent: contactForm.consent,
+          file: fileData
         }),
       });
 
@@ -264,12 +280,28 @@ const Contact = () => {
     
     // Submit form to backend API
     try {
+      // Convert file to base64 if exists
+      let fileData = null;
+      if (quoteForm.file) {
+        const reader = new FileReader();
+        fileData = await new Promise((resolve, reject) => {
+          reader.onload = () => resolve({
+            name: quoteForm.file.name,
+            type: quoteForm.file.type,
+            size: quoteForm.file.size,
+            data: reader.result.split(',')[1] // Remove data:type;base64, prefix
+          });
+          reader.onerror = reject;
+          reader.readAsDataURL(quoteForm.file);
+        });
+      }
+
       const response = await fetch('http://localhost:3001/api/quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(quoteForm),
+        body: JSON.stringify({ ...quoteForm, file: fileData }),
       });
 
       const data = await response.json();
@@ -480,36 +512,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Success Message */}
-            {submitStatus && (
-              <div className={`mb-12 p-8 rounded-2xl border-2 shadow-lg backdrop-blur-sm ${
-                submitStatus.type === "success" 
-                  ? "bg-gradient-to-r from-green-50 to-green-100 border-green-200" 
-                  : "bg-gradient-to-r from-red-50 to-red-100 border-red-200"
-              }`}>
-                <div className="flex items-center justify-center gap-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                    submitStatus.type === "success" ? "bg-green-500" : "bg-red-500"
-                  }`}>
-                    {submitStatus.type === "success" ? (
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    ) : (
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    )}
-                  </div>
-                  <p className={`text-center font-semibold text-lg ${
-                    submitStatus.type === "success" ? "text-green-800" : "text-red-800"
-                  }`}>
-                    {submitStatus.message}
-                  </p>
-                </div>
-              </div>
-            )}
-
             {/* Contact Form */}
             {activeForm === "contact" && (
               <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-12 relative overflow-hidden">
@@ -672,7 +674,7 @@ const Contact = () => {
                   {/* Message */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message <span className="text-red-500">*</span> (300-800 characters)
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       name="message"
@@ -711,32 +713,30 @@ const Contact = () => {
                     </p>
                   </div>
 
-                  {/* Consent */}
-                  <div>
-                    <label className="flex items-start">
-                      <input
-                        type="checkbox"
-                        name="consent"
-                        checked={contactForm.consent}
-                        onChange={handleContactChange}
-                        className="mt-1 mr-3 h-4 w-4 text-electric focus:ring-electric border-gray-300 rounded"
-                      />
-                      <span className="text-sm text-gray-700">
-                        I agree to be contacted and accept the <a href="/privacy" className="text-electric hover:underline">Privacy Policy</a>. <span className="text-red-500">*</span>
-                      </span>
-                    </label>
-                    {contactErrors.consent && (
-                      <p className="mt-1 text-sm text-red-500">{contactErrors.consent}</p>
-                    )}
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="pt-8">
+                  {/* Consent and Submit Button */}
+                  <div className="flex items-start gap-4 pt-6">
+                    <div className="flex-1">
+                      <label className="flex items-start">
+                        <input
+                          type="checkbox"
+                          name="consent"
+                          checked={contactForm.consent}
+                          onChange={handleContactChange}
+                          className="mt-1 mr-3 h-4 w-4 text-electric focus:ring-electric border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700">
+                          I agree to be contacted and accept the <a href="/privacy" className="text-electric hover:underline">Privacy Policy</a>. <span className="text-red-500">*</span>
+                        </span>
+                      </label>
+                      {contactErrors.consent && (
+                        <p className="mt-1 text-sm text-red-500 ml-7">{contactErrors.consent}</p>
+                      )}
+                    </div>
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-5 px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
+                      className="bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center gap-2 group text-sm whitespace-nowrap"
                     >
-                      <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                       </svg>
                       Send Message
@@ -1324,32 +1324,30 @@ const Contact = () => {
                         </select>
                       </div>
 
-                      {/* Consent */}
-                      <div>
-                        <label className="flex items-start">
-                          <input
-                            type="checkbox"
-                            name="consent"
-                            checked={quoteForm.consent}
-                            onChange={handleQuoteChange}
-                            className="mt-1 mr-3 h-4 w-4 text-electric focus:ring-electric border-gray-300 rounded"
-                          />
-                          <span className="text-sm text-gray-700">
-                            I agree to be contacted and accept the <a href="/privacy" className="text-electric hover:underline">Privacy Policy</a>. <span className="text-red-500">*</span>
-                          </span>
-                        </label>
-                        {quoteErrors.consent && (
-                          <p className="mt-1 text-sm text-red-500">{quoteErrors.consent}</p>
-                        )}
-                      </div>
-
-                      {/* Submit Button */}
-                      <div className="pt-8">
+                      {/* Consent and Submit Button */}
+                      <div className="flex items-start gap-4 pt-6">
+                        <div className="flex-1">
+                          <label className="flex items-start">
+                            <input
+                              type="checkbox"
+                              name="consent"
+                              checked={quoteForm.consent}
+                              onChange={handleQuoteChange}
+                              className="mt-1 mr-3 h-4 w-4 text-electric focus:ring-electric border-gray-300 rounded"
+                            />
+                            <span className="text-sm text-gray-700">
+                              I agree to be contacted and accept the <a href="/privacy" className="text-electric hover:underline">Privacy Policy</a>. <span className="text-red-500">*</span>
+                            </span>
+                          </label>
+                          {quoteErrors.consent && (
+                            <p className="mt-1 text-sm text-red-500 ml-7">{quoteErrors.consent}</p>
+                          )}
+                        </div>
                         <button
                           type="submit"
-                          className="w-full bg-gradient-to-r from-blue-600 to-electric hover:from-blue-600/90 hover:to-electric/90 text-white font-bold py-5 px-8 rounded-xl shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
+                          className="bg-gradient-to-r from-blue-600 to-electric hover:from-blue-600/90 hover:to-electric/90 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center gap-2 group text-sm whitespace-nowrap"
                         >
-                          <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
                           Request Quote
@@ -1358,6 +1356,36 @@ const Contact = () => {
                     </div>
                   </div>
                 </form>
+                </div>
+              </div>
+            )}
+
+            {/* Success Message */}
+            {submitStatus && (
+              <div className={`mt-8 p-6 rounded-2xl border-2 shadow-lg backdrop-blur-sm ${
+                submitStatus.type === "success" 
+                  ? "bg-gradient-to-r from-green-50 to-green-100 border-green-200" 
+                  : "bg-gradient-to-r from-red-50 to-red-100 border-red-200"
+              }`}>
+                <div className="flex items-center justify-center gap-4">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                    submitStatus.type === "success" ? "bg-green-500" : "bg-red-500"
+                  }`}>
+                    {submitStatus.type === "success" ? (
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    )}
+                  </div>
+                  <p className={`font-semibold text-base ${
+                    submitStatus.type === "success" ? "text-green-800" : "text-red-800"
+                  }`}>
+                    {submitStatus.message}
+                  </p>
                 </div>
               </div>
             )}

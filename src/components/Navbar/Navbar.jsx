@@ -82,6 +82,7 @@ const Navbar = () => {
 
               <Link to="/projects" className="text-white hover:text-electric-light transition-colors">Projects</Link>
               <Link to="/contact" className="text-white hover:text-electric-light transition-colors">Contact</Link>
+              <Link to="/login" className="bg-electric hover:bg-electric-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors">Login</Link>
             </div>
           </div>
 
@@ -220,6 +221,13 @@ const Navbar = () => {
                 onClick={closeMobileMenu}
               >
                 Contact
+              </Link>
+              <Link
+                to="/login"
+                className="block px-6 py-3 bg-electric hover:bg-electric-dark text-white font-semibold transition-all duration-200 mx-6 rounded-lg text-center"
+                onClick={closeMobileMenu}
+              >
+                Login
               </Link>
             </nav>
           </div>

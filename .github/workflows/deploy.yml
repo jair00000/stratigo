@@ -24,7 +24,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
+      - run: npm run build -- --base=/stratigo/
       # Create 404.html so SPA routes don't 404 on refresh
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3

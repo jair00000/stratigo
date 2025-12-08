@@ -19,12 +19,18 @@ import Cookies from "./pages/Cookies";
 import SLA from "./pages/SLA";
 import Support from "./pages/Support";
 import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <ScrollToTop />
       <MainLayout>
         <Routes>
@@ -46,6 +52,7 @@ function App() {
           <Route path="/sla" element={<SLA />} />
           <Route path="/support" element={<Support />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>

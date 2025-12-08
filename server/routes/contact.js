@@ -16,16 +16,27 @@ router.post('/', validateContactForm, async (req, res) => {
     const internalEmail = contactFormTemplate(formData);
     const autoReply = autoReplyContactTemplate(formData.fullName);
     
+    // Prepare attachments if file was uploaded
+    const attachments = [];
+    if (formData.file && formData.file.data) {
+      attachments.push({
+        filename: formData.file.name,
+        content: formData.file.data,
+        encoding: 'base64'
+      });
+    }
+    
     // Send email to Stratigo team (hello@stratigo.io)
     await sendEmail({
       to: emailAddresses.hello,
       subject: internalEmail.subject,
       html: internalEmail.html,
       text: internalEmail.text,
-      replyTo: formData.email
+      replyTo: formData.email,
+      attachments: attachments.length > 0 ? attachments : undefined
     });
     
-    // Send auto-reply to user
+    // Send auto-reply to user (no attachments in auto-reply)
     await sendEmail({
       to: formData.email,
       subject: autoReply.subject,
@@ -36,6 +47,9 @@ router.post('/', validateContactForm, async (req, res) => {
     
     // Log success
     console.log(`✅ Contact form processed: ${formData.fullName} (${formData.email})`);
+    if (attachments.length > 0) {
+      console.log(`📎 Attachment included: ${formData.file.name}`);
+    }
     
     // Send success response
     res.status(200).json({

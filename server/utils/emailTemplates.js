@@ -486,10 +486,213 @@ hello@stratigo.io | support@stratigo.io
   };
 };
 
+/**
+ * Invoice Request Email Template (Internal - to bookings@stratigo.io)
+ */
+const invoiceRequestTemplate = (data) => {
+  const { fullName, email, plan, billing, price } = data;
+  
+  const planNames = {
+    standard: 'Standard',
+    premium: 'Premium',
+    pro: 'Pro'
+  };
+  
+  return {
+    subject: `New Invoice Request - ${planNames[plan]} Plan (${billing})`,
+    html: `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px; }
+          .section { background: white; padding: 20px; margin-top: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; }
+          .field { margin-bottom: 15px; }
+          .label { font-weight: bold; color: #1e3a8a; font-size: 14px; }
+          .value { margin-top: 5px; padding: 10px; background: #f9fafb; border-radius: 4px; }
+          .highlight { background: #fef3c7; padding: 15px; border-radius: 8px; margin-top: 15px; }
+          .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #666; border-top: 2px solid #e5e7eb; padding-top: 20px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>💰 New Invoice Request</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9;">Hosting Plan Invoice Request</p>
+          </div>
+          
+          <div class="content">
+            <div class="section">
+              <div class="field">
+                <div class="label">👤 Customer Name:</div>
+                <div class="value">${fullName}</div>
+              </div>
+              <div class="field">
+                <div class="label">📧 Customer Email:</div>
+                <div class="value"><a href="mailto:${email}">${email}</a></div>
+              </div>
+            </div>
+            
+            <div class="section">
+              <div class="field">
+                <div class="label">📦 Selected Plan:</div>
+                <div class="value"><strong>${planNames[plan]}</strong></div>
+              </div>
+              <div class="field">
+                <div class="label">⏰ Billing Period:</div>
+                <div class="value"><strong>${billing === 'monthly' ? 'Monthly' : 'Annual'}</strong></div>
+              </div>
+              <div class="field">
+                <div class="label">💵 Amount:</div>
+                <div class="value"><strong>$${price.toFixed(2)}</strong></div>
+              </div>
+            </div>
+            
+            <div class="highlight">
+              <p style="margin: 0; font-weight: bold; color: #92400e;">📋 Action Required:</p>
+              <p style="margin: 10px 0 0 0;">Please send an invoice via Wise to <strong>${email}</strong> for the ${planNames[plan]} Plan (${billing} billing).</p>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <p><strong>Next Steps:</strong></p>
+            <p>1. Create invoice in Wise for $${price.toFixed(2)}</p>
+            <p>2. Send invoice to: <a href="mailto:${email}">${email}</a></p>
+            <p>3. Confirm receipt with customer</p>
+            <p style="margin-top: 15px; color: #999;">Submitted via Stratigo Hosting Invoice Request Form</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `,
+    text: `
+NEW INVOICE REQUEST
+
+Customer Name: ${fullName}
+Customer Email: ${email}
+
+Selected Plan: ${planNames[plan]}
+Billing Period: ${billing === 'monthly' ? 'Monthly' : 'Annual'}
+Amount: $${price.toFixed(2)}
+
+Action Required:
+Please send an invoice via Wise to ${email} for the ${planNames[plan]} Plan (${billing} billing).
+
+Next Steps:
+1. Create invoice in Wise for $${price.toFixed(2)}
+2. Send invoice to: ${email}
+3. Confirm receipt with customer
+
+---
+Submitted via Stratigo Hosting Invoice Request Form
+    `
+  };
+};
+
+/**
+ * Auto-reply template for invoice request
+ */
+const autoReplyInvoiceTemplate = (name, plan, billing, price) => {
+  const planNames = {
+    standard: 'Standard',
+    premium: 'Premium',
+    pro: 'Pro'
+  };
+  
+  return {
+    subject: 'Invoice Request Received - Stratigo Hosting',
+    html: `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px; }
+          .summary { background: white; padding: 20px; border-left: 4px solid #3b82f6; margin: 20px 0; border-radius: 4px; }
+          .timeline { background: white; padding: 20px; border-left: 4px solid #10b981; margin: 20px 0; border-radius: 4px; }
+          .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #666; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>✅ Invoice Request Received!</h1>
+          </div>
+          <div class="content">
+            <p>Hi ${name},</p>
+            <p>Thank you for requesting an invoice for your <strong>${planNames[plan]} Hosting Plan</strong>. We've received your request and will send you an invoice shortly.</p>
+            
+            <div class="summary">
+              <h3 style="color: #1e3a8a; margin-top: 0;">📋 Your Request Summary:</h3>
+              <p><strong>Plan:</strong> ${planNames[plan]}</p>
+              <p><strong>Billing:</strong> ${billing === 'monthly' ? 'Monthly' : 'Annual'}</p>
+              <p><strong>Amount:</strong> $${price.toFixed(2)}</p>
+            </div>
+            
+            <div class="timeline">
+              <h3 style="color: #059669; margin-top: 0;">⏱️ What Happens Next:</h3>
+              <ol style="padding-left: 20px;">
+                <li><strong>Invoice Creation</strong> - We'll create your invoice via Wise</li>
+                <li><strong>Email Delivery</strong> - You'll receive the invoice at this email address</li>
+                <li><strong>Payment</strong> - Complete payment through the invoice link</li>
+                <li><strong>Activation</strong> - Your hosting will be activated upon payment confirmation</li>
+              </ol>
+            </div>
+            
+            <p><strong>Expected Timeline:</strong> You should receive your invoice within <strong>24 hours</strong>.</p>
+            
+            <p>If you have any questions or need to modify your request, please contact us at <a href="mailto:bookings@stratigo.io">bookings@stratigo.io</a></p>
+            
+            <p>We look forward to hosting your website!</p>
+          </div>
+          <div class="footer">
+            <p><strong>Stratigo</strong> - Managed Hosting Solutions</p>
+            <p>bookings@stratigo.io | support@stratigo.io</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `,
+    text: `
+Hi ${name},
+
+Thank you for requesting an invoice for your ${planNames[plan]} Hosting Plan. We've received your request and will send you an invoice shortly.
+
+Your Request Summary:
+Plan: ${planNames[plan]}
+Billing: ${billing === 'monthly' ? 'Monthly' : 'Annual'}
+Amount: $${price.toFixed(2)}
+
+⏱️ What Happens Next:
+1. Invoice Creation - We'll create your invoice via Wise
+2. Email Delivery - You'll receive the invoice at this email address
+3. Payment - Complete payment through the invoice link
+4. Activation - Your hosting will be activated upon payment confirmation
+
+Expected Timeline: You should receive your invoice within 24 hours.
+
+If you have any questions or need to modify your request, please contact us at bookings@stratigo.io
+
+We look forward to hosting your website!
+
+Best regards,
+The Stratigo Team
+bookings@stratigo.io | support@stratigo.io
+    `
+  };
+};
+
 module.exports = {
   contactFormTemplate,
   quoteFormTemplate,
   autoReplyContactTemplate,
-  autoReplyQuoteTemplate
+  autoReplyQuoteTemplate,
+  invoiceRequestTemplate,
+  autoReplyInvoiceTemplate
 };
 
