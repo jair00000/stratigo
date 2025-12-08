@@ -37,6 +37,40 @@ jobs:
           ls -la ./dist
           echo "✅ Total files: $(find ./dist -type f | wc -l)"
 
+      - name: Check secrets are set
+        run: |
+          echo "🔍 Checking if required secrets are set..."
+          if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ]; then
+            echo "❌ AWS_ACCESS_KEY_ID is not set!"
+            exit 1
+          else
+            echo "✅ AWS_ACCESS_KEY_ID is set"
+          fi
+          if [ -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]; then
+            echo "❌ AWS_SECRET_ACCESS_KEY is not set!"
+            exit 1
+          else
+            echo "✅ AWS_SECRET_ACCESS_KEY is set"
+          fi
+          if [ -z "${{ secrets.AWS_REGION }}" ]; then
+            echo "❌ AWS_REGION is not set!"
+            exit 1
+          else
+            echo "✅ AWS_REGION is set: ${{ secrets.AWS_REGION }}"
+          fi
+          if [ -z "${{ secrets.S3_BUCKET }}" ]; then
+            echo "❌ S3_BUCKET is not set!"
+            exit 1
+          else
+            echo "✅ S3_BUCKET is set: ${{ secrets.S3_BUCKET }}"
+          fi
+          if [ -z "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
+            echo "❌ CLOUDFRONT_DISTRIBUTION_ID is not set!"
+            exit 1
+          else
+            echo "✅ CLOUDFRONT_DISTRIBUTION_ID is set"
+          fi
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
