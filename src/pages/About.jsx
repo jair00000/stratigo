@@ -122,11 +122,8 @@ const About = () => {
             
             <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-12 border border-white/50 shadow-lg">
               <div className="space-y-3 sm:space-y-4 md:space-y-6 text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-left">
-                <p className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-electric flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>At Stratigo, we believe that technology and strategy move forward together. We are a team of thinkers, builders, and creators dedicated to helping businesses achieve meaningful growth through Marketing Solutions, Software Development, and Hosting Services.</span>
+                <p className="text-left">
+                  At Stratigo, we believe that technology and strategy move forward together. We are a team of thinkers, builders, and creators dedicated to helping businesses achieve meaningful growth through Marketing Solutions, Software Development, and Hosting Services.
                 </p>
                 <p className="text-left">
                   In today's fast-evolving digital marketplace, a brand's online presence defines its credibility. That's why we design solutions that go beyond appearance — delivering systems built for performance, security, and measurable business impact. Every project we create is guided by precision, transparency, and collaboration, ensuring long-term value for our clients.
