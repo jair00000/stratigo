@@ -1,41 +1,37 @@
-name: Deploy to GitHub Pages
+name: Deploy to S3 & CloudFront
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches: [ "main" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build -- --base=/stratigo/
-      # Create 404.html so SPA routes don't 404 on refresh
-      - run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Checkout source
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Upload to S3
+      run: aws s3 sync dist s3://$S3_BUCKET --delete
+
+    - name: Invalidate CloudFront
+      run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
