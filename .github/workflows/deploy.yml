@@ -20,18 +20,22 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        continue-on-error: false
 
       - name: Build project
         run: npm run build
+        continue-on-error: false
 
       - name: Verify build output
         run: |
+          set -e
           if [ ! -d "./dist" ]; then
-            echo "Error: dist directory not found!"
+            echo "❌ Error: dist directory not found!"
             exit 1
           fi
-          echo "Build output verified. Files:"
+          echo "✅ Build output verified. Files:"
           ls -la ./dist
+          echo "✅ Total files: $(find ./dist -type f | wc -l)"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -42,21 +46,46 @@ jobs:
 
       - name: Install AWS CLI
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
+          set -e
+          echo "📦 Installing AWS CLI v2..."
+          curl -f "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip -q awscliv2.zip
           sudo ./aws/install
           aws --version
+          echo "✅ AWS CLI installed successfully"
+
+      - name: Verify AWS credentials
+        run: |
+          set -e
+          echo "🔐 Verifying AWS credentials..."
+          aws sts get-caller-identity || (echo "❌ AWS credentials verification failed!" && exit 1)
+          echo "✅ AWS credentials verified"
 
       - name: Upload to S3
         run: |
-          echo "Uploading to S3 bucket: ${{ secrets.S3_BUCKET }}"
-          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --delete --no-progress
-          echo "Upload completed successfully"
+          set -e
+          BUCKET="${{ secrets.S3_BUCKET }}"
+          if [ -z "$BUCKET" ]; then
+            echo "❌ Error: S3_BUCKET secret is not set!"
+            exit 1
+          fi
+          echo "📤 Uploading to S3 bucket: $BUCKET"
+          aws s3 sync ./dist s3://$BUCKET --delete --no-progress || (echo "❌ S3 upload failed!" && exit 1)
+          echo "✅ Upload completed successfully"
 
       - name: Invalidate CloudFront
         run: |
-          echo "Invalidating CloudFront distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
-          echo "CloudFront invalidation completed"
+          set -e
+          DIST_ID="${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
+          if [ -z "$DIST_ID" ]; then
+            echo "❌ Error: CLOUDFRONT_DISTRIBUTION_ID secret is not set!"
+            exit 1
+          fi
+          echo "🔄 Invalidating CloudFront distribution: $DIST_ID"
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id $DIST_ID \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "✅ CloudFront invalidation created: $INVALIDATION_ID"
+          echo "⏳ Invalidation is in progress. It may take a few minutes to complete."
