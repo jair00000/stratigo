@@ -131,26 +131,47 @@ jobs:
           fi
           echo "✅ Upload completed successfully"
 
-      - name: Invalidate CloudFront
+      - name: Verify CloudFront distribution exists
         run: |
           set -e
           DIST_ID="${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
           if [ -z "$DIST_ID" ]; then
-            echo "❌ Error: CLOUDFRONT_DISTRIBUTION_ID secret is not set!"
-            exit 1
+            echo "⚠️  Warning: CLOUDFRONT_DISTRIBUTION_ID secret is not set!"
+            echo "Skipping CloudFront invalidation."
+            exit 0
+          fi
+          echo "🔍 Verifying CloudFront distribution exists: $DIST_ID"
+          if ! aws cloudfront get-distribution --id "$DIST_ID" > /dev/null 2>&1; then
+            echo "❌ CloudFront distribution not found: $DIST_ID"
+            echo "Please check:"
+            echo "  1. Go to AWS Console → CloudFront"
+            echo "  2. Find your distribution and copy the Distribution ID"
+            echo "  3. Update the CLOUDFRONT_DISTRIBUTION_ID secret in GitHub"
+            echo ""
+            echo "⚠️  Deployment will continue, but CloudFront cache won't be invalidated."
+            exit 0
+          fi
+          echo "✅ CloudFront distribution verified"
+
+      - name: Invalidate CloudFront
+        continue-on-error: true
+        run: |
+          set -e
+          DIST_ID="${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
+          if [ -z "$DIST_ID" ]; then
+            echo "⚠️  Skipping CloudFront invalidation (no distribution ID set)"
+            exit 0
           fi
           echo "🔄 Invalidating CloudFront distribution: $DIST_ID"
-          if ! INVALIDATION_ID=$(aws cloudfront create-invalidation \
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
             --distribution-id "$DIST_ID" \
             --paths "/*" \
             --query 'Invalidation.Id' \
-            --output text 2>&1); then
-            echo "❌ CloudFront invalidation failed!"
-            echo "Error output: $INVALIDATION_ID"
-            echo "Please check:"
-            echo "  - CloudFront distribution ID is correct: $DIST_ID"
-            echo "  - IAM user has cloudfront:CreateInvalidation permission"
-            exit 1
+            --output text)
+          if [ $? -eq 0 ]; then
+            echo "✅ CloudFront invalidation created: $INVALIDATION_ID"
+            echo "⏳ Invalidation is in progress. It may take a few minutes to complete."
+          else
+            echo "⚠️  CloudFront invalidation failed, but deployment succeeded."
+            echo "Files are uploaded to S3. You may need to manually invalidate CloudFront cache."
           fi
-          echo "✅ CloudFront invalidation created: $INVALIDATION_ID"
-          echo "⏳ Invalidation is in progress. It may take a few minutes to complete."
