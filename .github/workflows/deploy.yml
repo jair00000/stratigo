@@ -47,19 +47,34 @@ jobs:
       - name: Install AWS CLI
         run: |
           set -e
-          echo "📦 Installing AWS CLI v2..."
-          curl -f "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip -q awscliv2.zip
-          sudo ./aws/install
-          aws --version
-          echo "✅ AWS CLI installed successfully"
+          echo "📦 Checking AWS CLI..."
+          if command -v aws &> /dev/null; then
+            echo "✅ AWS CLI already installed:"
+            aws --version
+          else
+            echo "📦 Installing AWS CLI v2..."
+            curl -f "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" || exit 1
+            unzip -q awscliv2.zip || exit 1
+            sudo ./aws/install || exit 1
+            aws --version || exit 1
+            echo "✅ AWS CLI installed successfully"
+          fi
 
       - name: Verify AWS credentials
         run: |
           set -e
           echo "🔐 Verifying AWS credentials..."
-          aws sts get-caller-identity || (echo "❌ AWS credentials verification failed!" && exit 1)
+          if ! aws sts get-caller-identity; then
+            echo "❌ AWS credentials verification failed!"
+            echo "Please check:"
+            echo "  - AWS_ACCESS_KEY_ID secret is set"
+            echo "  - AWS_SECRET_ACCESS_KEY secret is set"
+            echo "  - AWS_REGION secret is set"
+            echo "  - IAM user has proper permissions"
+            exit 1
+          fi
           echo "✅ AWS credentials verified"
+          aws sts get-caller-identity
 
       - name: Upload to S3
         run: |
@@ -70,7 +85,16 @@ jobs:
             exit 1
           fi
           echo "📤 Uploading to S3 bucket: $BUCKET"
-          aws s3 sync ./dist s3://$BUCKET --delete --no-progress || (echo "❌ S3 upload failed!" && exit 1)
+          echo "📁 Source directory contents:"
+          ls -la ./dist | head -10
+          if ! aws s3 sync ./dist s3://$BUCKET --delete --no-progress; then
+            echo "❌ S3 upload failed!"
+            echo "Please check:"
+            echo "  - S3 bucket name is correct: $BUCKET"
+            echo "  - IAM user has s3:PutObject, s3:DeleteObject, s3:ListBucket permissions"
+            echo "  - Bucket exists and is accessible"
+            exit 1
+          fi
           echo "✅ Upload completed successfully"
 
       - name: Invalidate CloudFront
@@ -82,10 +106,17 @@ jobs:
             exit 1
           fi
           echo "🔄 Invalidating CloudFront distribution: $DIST_ID"
-          INVALIDATION_ID=$(aws cloudfront create-invalidation \
-            --distribution-id $DIST_ID \
+          if ! INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" \
             --paths "/*" \
             --query 'Invalidation.Id' \
-            --output text)
+            --output text 2>&1); then
+            echo "❌ CloudFront invalidation failed!"
+            echo "Error output: $INVALIDATION_ID"
+            echo "Please check:"
+            echo "  - CloudFront distribution ID is correct: $DIST_ID"
+            echo "  - IAM user has cloudfront:CreateInvalidation permission"
+            exit 1
+          fi
           echo "✅ CloudFront invalidation created: $INVALIDATION_ID"
           echo "⏳ Invalidation is in progress. It may take a few minutes to complete."
