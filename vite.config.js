@@ -18,11 +18,33 @@ export default defineConfig({
     },
   },
   build: {
-    // Ensure proper routing for production builds
+    // Optimize bundle size with code splitting
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: (id) => {
+          // Split vendor libraries into separate chunks
+          if (id.includes('node_modules')) {
+            // React and React DOM
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'vendor-react';
+            }
+            // Stripe libraries
+            if (id.includes('stripe') || id.includes('@stripe')) {
+              return 'vendor-stripe';
+            }
+            // Other large vendor libraries
+            if (id.includes('react-helmet')) {
+              return 'vendor-helmet';
+            }
+            // All other node_modules
+            return 'vendor';
+          }
+        },
       },
     },
+    // Enable source maps for debugging (optional, can disable for smaller builds)
+    sourcemap: false,
+    // Minify for production (using esbuild which is faster and built-in)
+    minify: 'esbuild',
   },
 })
