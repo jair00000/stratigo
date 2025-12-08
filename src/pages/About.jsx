@@ -19,38 +19,35 @@ const About = () => {
   return (
     <>
       {/* Modern Hero Section */}
-      <section className="min-h-[60vh] sm:min-h-[70vh] bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden py-8 sm:py-0">
+      <section className="w-full h-[70vh] bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 relative overflow-hidden flex items-center">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ backgroundImage: `url(${HeroImage})` }}
         ></div>
 
-        {/* Overlay for balance */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-blue-900/20 z-[1]"></div>
-        
-        {/* Enhanced decorative background elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-electric/20 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-electric/10 to-blue-400/10 rounded-full blur-2xl"></div>
-        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-overlay"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center py-6 sm:py-8 md:py-12">
-          <Container>
-            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-              {/* Left Content */}
-              <div className="text-left px-4 sm:px-0">
-                <Heading level={1} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy mb-3 sm:mb-4 md:mb-6 leading-tight">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-left text-white">
+              <div className="mb-6">
+                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
                   About Stratigo
                 </Heading>
-                
-                <Text className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-                  Where technology and strategy unite to create meaningful growth for businesses. We're your strategic growth partner in the digital world.
-                </Text>
+                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                  Where technology and strategy unite to create meaningful growth for businesses.
+                </p>
+              </div>
+              
+              <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+                We're your strategic growth partner in the digital world.
+              </Text>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
                     variant="primary" 
                     className="w-full sm:w-auto bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group text-xs sm:text-sm md:text-base"
@@ -63,7 +60,7 @@ const About = () => {
                   </Button>
                   <Button 
                     variant="secondary" 
-                    className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-navy font-semibold py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-navy/30 hover:border-navy/50 transform hover:scale-105 transition-all duration-300 text-xs sm:text-sm md:text-base"
+                    className="w-full sm:w-auto bg-white hover:bg-white/90 text-navy font-semibold py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl transform hover:scale-105 transition-all duration-300 text-xs sm:text-sm md:text-base"
                     onClick={navigateToServices}
                   >
                     Our Services
@@ -71,51 +68,33 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Right Side - Stats Cards */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4 lg:gap-6 relative z-20 px-4 sm:px-0">
+            {/* Right Side - Stats Cards */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {/* Stat 1 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">Quality</div>
+                <div className="text-white/80 text-sm">Premium Service Quality</div>
+              </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-1.5 sm:mb-2 md:mb-3 lg:mb-4">
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-navy mb-0.5 sm:mb-1 md:mb-2">Quality</h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600 font-medium leading-tight">Premium Service Quality</p>
-                </div>
+              {/* Stat 2 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">24/7</div>
+                <div className="text-white/80 text-sm">Expert Support</div>
+              </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-1.5 sm:mb-2 md:mb-3 lg:mb-4">
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-navy mb-0.5 sm:mb-1 md:mb-2">24/7</h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600 font-medium leading-tight">Expert Support</p>
-                </div>
+              {/* Stat 3 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">100%</div>
+                <div className="text-white/80 text-sm">Guaranteed Project Delivery</div>
+              </div>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-electric to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-1.5 sm:mb-2 md:mb-3 lg:mb-4">
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-navy mb-0.5 sm:mb-1 md:mb-2">100%</h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600 font-medium leading-tight">Guaranteed Project Delivery</p>
-                </div>
-
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-6 border border-white/50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-1.5 sm:mb-2 md:mb-3 lg:mb-4">
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-navy mb-0.5 sm:mb-1 md:mb-2">Growth</h3>
-                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-600 font-medium leading-tight">Business Growth Focus</p>
-                </div>
+              {/* Stat 4 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">Growth</div>
+                <div className="text-white/80 text-sm">Business Growth Focus</div>
               </div>
             </div>
-          </Container>
+          </div>
         </div>
       </section>
 
