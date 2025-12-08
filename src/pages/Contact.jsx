@@ -372,36 +372,36 @@ const Contact = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Left Content */}
             <div className="text-left text-white">
-              <div className="mb-6">
-                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
+              <div className="mb-4 sm:mb-6">
+                <Heading level={1} className="text-white text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 sm:mb-3">
                   Get in Touch
                 </Heading>
-                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                <p className="text-white text-left text-base sm:text-lg md:text-xl font-medium text-white/90">
                   Ready to grow your business?
                 </p>
               </div>
               
-              <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+              <Text className="text-white text-left text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 text-white/90">
                 Contact us for a consultation or request a detailed quote for your project. We're here to help you succeed.
               </Text>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={() => setActiveForm("contact")}
-                  className="bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base"
                 >
                   Contact Us
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
                 <button
                   onClick={() => setActiveForm("quote")}
-                  className="bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300"
+                  className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
                 >
                   Get a Quote
                 </button>
@@ -469,22 +469,22 @@ const Contact = () => {
         <Container className="relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Form Tabs */}
-            <div className="flex justify-center mb-16">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-3 border border-white/50 shadow-lg">
-                <div className="flex gap-4">
+            <div className="flex justify-center mb-8 sm:mb-12 md:mb-16 px-4">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-white/50 shadow-lg w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                   <button
                     onClick={() => {
                       setActiveForm("contact");
                       setSubmitStatus(null);
                     }}
-                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    className={`w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 ${
                       activeForm === "contact"
                         ? "bg-gradient-to-r from-electric to-blue-600 text-white shadow-lg transform scale-105"
                         : "text-gray-700 hover:text-electric hover:bg-white/50"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                       Contact Us
@@ -495,14 +495,14 @@ const Contact = () => {
                       setActiveForm("quote");
                       setSubmitStatus(null);
                     }}
-                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    className={`w-full sm:w-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 ${
                       activeForm === "quote"
                         ? "bg-gradient-to-r from-electric to-blue-600 text-white shadow-lg transform scale-105"
                         : "text-gray-700 hover:text-electric hover:bg-white/50"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
                       Get a Quote

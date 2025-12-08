@@ -24,12 +24,12 @@ const Terms = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-5xl md:text-6xl mb-6">
+          <div className="max-w-4xl text-center text-white px-4 sm:px-6 md:px-12">
+            <Heading level={1} variant="hero" className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
               Terms of Service
             </Heading>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-lg">
+            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-sm sm:text-base md:text-lg">
               Last Updated: {lastUpdated}
             </Text>
           </div>
@@ -39,52 +39,52 @@ const Terms = () => {
       {/* Terms Content */}
       <Section variant="content">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-200 p-5 sm:p-6 md:p-8 lg:p-12">
               
               {/* Introduction */}
-              <div className="mb-8">
-                <Text className="text-lg text-gray-700 leading-relaxed">
+              <div className="mb-6 sm:mb-8">
+                <Text className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                   Welcome to Stratigo Software Development Services ("Stratigo," "we," "our," or "us").
                   By accessing or using our website and services, you ("Client," "you," or "your") agree to comply with and be bound by these Terms of Service. Please read them carefully before engaging with our services.
                 </Text>
               </div>
 
               {/* 1. Services Overview */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   1. Services Overview
                 </Heading>
-                <Text className="text-gray-700 leading-relaxed mb-3">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 sm:mb-3">
                   Stratigo provides professional Marketing Solutions, Software Development, and Hosting Services designed for business clients.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Each project is tailored according to an agreed proposal, quotation, or contract outlining deliverables, timelines, and costs.
                 </Text>
               </div>
 
               {/* 2. Acceptance of Terms */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   2. Acceptance of Terms
                 </Heading>
-                <Text className="text-gray-700 leading-relaxed mb-3">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 sm:mb-3">
                   By using our website or engaging our services, you acknowledge that you have read, understood, and agreed to these Terms.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   If you do not agree, please do not access or use our services.
                 </Text>
               </div>
 
               {/* 3. Client Responsibilities */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   3. Client Responsibilities
                 </Heading>
-                <Text className="text-gray-700 leading-relaxed mb-3">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 sm:mb-3">
                   You agree to:
                 </Text>
-                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-700">
+                <ul className="list-disc list-inside space-y-1.5 sm:space-y-2 ml-3 sm:ml-4 text-sm sm:text-base text-gray-700">
                   <li>Provide accurate and complete information required for project execution.</li>
                   <li>Review and approve deliverables within agreed timelines.</li>
                   <li>Comply with applicable laws, including copyright and data protection regulations.</li>
@@ -93,8 +93,8 @@ const Terms = () => {
               </div>
 
               {/* 4. Payment & Billing */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   4. Payment & Billing
                 </Heading>
                 <ul className="space-y-3">
@@ -102,7 +102,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Pricing for services (Hosting, Marketing, Software Development) is detailed in your proposal or subscription plan.
                     </Text>
                   </li>
@@ -110,7 +110,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Payments are due upon invoice, unless otherwise specified.
                     </Text>
                   </li>
@@ -118,7 +118,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Monthly or annual hosting subscriptions renew automatically unless canceled before the renewal date.
                     </Text>
                   </li>
@@ -126,7 +126,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Failure to pay may result in suspension or termination of hosting and support services.
                     </Text>
                   </li>
@@ -134,8 +134,8 @@ const Terms = () => {
               </div>
 
               {/* 5. Intellectual Property */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   5. Intellectual Property
                 </Heading>
                 <ul className="space-y-3">
@@ -143,7 +143,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       All custom software, websites, and marketing materials created by Stratigo remain our intellectual property until full payment is received.
                     </Text>
                   </li>
@@ -151,7 +151,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Upon payment completion, ownership of the final deliverables is transferred to the client, except for licensed or third-party components.
                     </Text>
                   </li>
@@ -159,7 +159,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Stratigo reserves the right to display completed projects in our portfolio unless confidentiality is requested in writing.
                     </Text>
                   </li>
@@ -167,8 +167,8 @@ const Terms = () => {
               </div>
 
               {/* 6. Hosting & Data */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   6. Hosting & Data
                 </Heading>
                 <ul className="space-y-3">
@@ -176,7 +176,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Stratigo provides managed hosting through secure Virtual Private Servers (VPS).
                     </Text>
                   </li>
@@ -184,7 +184,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Clients are responsible for their domain ownership and renewals.
                     </Text>
                   </li>
@@ -192,7 +192,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       We perform regular backups and apply security measures, but we cannot guarantee absolute data security or uninterrupted service.
                     </Text>
                   </li>
@@ -200,7 +200,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       In the event of data loss or system interruption, Stratigo will make reasonable efforts to restore services promptly.
                     </Text>
                   </li>
@@ -208,8 +208,8 @@ const Terms = () => {
               </div>
 
               {/* 7. Confidentiality */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   7. Confidentiality
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed">
@@ -219,8 +219,8 @@ const Terms = () => {
               </div>
 
               {/* 8. Limitation of Liability */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   8. Limitation of Liability
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -231,7 +231,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Any indirect, incidental, or consequential damages arising from the use or inability to use our services.
                     </Text>
                   </li>
@@ -239,7 +239,7 @@ const Terms = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Losses due to external factors beyond our control, including force majeure events, third-party outages, or client-side errors.
                     </Text>
                   </li>
@@ -252,8 +252,8 @@ const Terms = () => {
               </div>
 
               {/* 9. Termination */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   9. Termination
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -268,8 +268,8 @@ const Terms = () => {
               </div>
 
               {/* 10. Privacy & Data Protection */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   10. Privacy & Data Protection
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -281,8 +281,8 @@ const Terms = () => {
               </div>
 
               {/* 11. Revisions & Updates */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   11. Revisions & Updates
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -294,8 +294,8 @@ const Terms = () => {
               </div>
 
               {/* 12. Contact Information */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   12. Contact Information
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">

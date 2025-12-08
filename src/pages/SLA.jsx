@@ -28,16 +28,16 @@ const SLA = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-5xl md:text-6xl mb-6">
+          <div className="max-w-4xl text-center text-white px-4 sm:px-6 md:px-12">
+            <Heading level={1} variant="hero" className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
               Service Level Agreement
             </Heading>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-lg mb-4">
+            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
               Uptime Guarantee & Service Commitments
             </Text>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-base">
+            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-xs sm:text-sm md:text-base">
               Last Updated: {lastUpdated}
             </Text>
           </div>
@@ -47,63 +47,63 @@ const SLA = () => {
       {/* SLA Content */}
       <Section variant="content">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-200 p-5 sm:p-6 md:p-8 lg:p-12">
               
               {/* Introduction */}
               <div className="mb-8">
                 <Text className="text-lg text-gray-700 leading-relaxed mb-4">
                   This Service Level Agreement ("SLA") applies to Stratigo's Managed VPS Hosting Services and defines our commitment to service availability, performance, and support for active hosting clients.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   This SLA is part of your hosting service agreement and applies only to services provided directly by Stratigo.
                 </Text>
               </div>
 
               {/* 1. Service Availability Commitment */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   1. Service Availability Commitment
                 </Heading>
                 
-                <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-4">
-                  <div className="flex items-center mb-2">
-                    <svg className="w-6 h-6 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 sm:p-5 md:p-6 mb-3 sm:mb-4">
+                  <div className="flex items-center mb-1.5 sm:mb-2">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 sm:mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-lg font-bold text-green-900">
+                    <Text className="text-base sm:text-lg font-bold text-green-900">
                       99.9% Monthly Uptime Guarantee
                     </Text>
                   </div>
-                  <Text className="text-green-800">
+                  <Text className="text-sm sm:text-base text-green-800">
                     We commit to maintaining at least 99.9% uptime for your hosting service each calendar month, excluding scheduled maintenance.
                   </Text>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4">
-                  <h3 className="text-lg font-bold text-navy mb-3">What This Means:</h3>
-                  <ul className="space-y-2">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 mb-3 sm:mb-4">
+                    <h3 className="text-base sm:text-lg font-bold text-navy mb-2 sm:mb-3">What This Means:</h3>
+                  <ul className="space-y-1.5 sm:space-y-2">
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-electric mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                         Maximum expected downtime: approximately 43 minutes per month
                       </Text>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-electric mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                         Calculated monthly, not annually
                       </Text>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-electric mr-2 sm:mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                         Measured from our internal monitoring systems
                       </Text>
                     </li>
@@ -112,8 +112,8 @@ const SLA = () => {
               </div>
 
               {/* 2. Scheduled Maintenance */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   2. Scheduled Maintenance
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -124,7 +124,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Advance Notice:</strong> At least 48 hours' notice for planned maintenance (when possible)
                     </Text>
                   </li>
@@ -132,7 +132,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Maintenance Window:</strong> Typically scheduled during low-traffic hours
                     </Text>
                   </li>
@@ -140,7 +140,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Emergency Maintenance:</strong> May be performed without advance notice for critical security or stability issues
                     </Text>
                   </li>
@@ -153,8 +153,8 @@ const SLA = () => {
               </div>
 
               {/* 3. Support Response Times */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   3. Support Response Times
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -218,8 +218,8 @@ const SLA = () => {
               </div>
 
               {/* 4. Service Credits */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   4. Service Credits for SLA Breach
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -270,8 +270,8 @@ const SLA = () => {
               </div>
 
               {/* 5. SLA Exclusions */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   5. SLA Exclusions
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -282,7 +282,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Scheduled maintenance performed according to Section 2
                     </Text>
                   </li>
@@ -290,7 +290,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Issues caused by client applications, scripts, or custom configurations
                     </Text>
                   </li>
@@ -298,7 +298,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Third-party service failures (DNS providers, CDN, payment processors, etc.)
                     </Text>
                   </li>
@@ -306,7 +306,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       DDoS attacks, cyber attacks, or malicious traffic targeting your site
                     </Text>
                   </li>
@@ -314,7 +314,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Force majeure events (natural disasters, power outages, internet backbone failures, etc.)
                     </Text>
                   </li>
@@ -322,7 +322,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Issues arising from suspended or terminated accounts
                     </Text>
                   </li>
@@ -330,7 +330,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Client's failure to follow recommended security practices or apply updates
                     </Text>
                   </li>
@@ -338,8 +338,8 @@ const SLA = () => {
               </div>
 
               {/* 6. Monitoring and Reporting */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   6. Monitoring and Reporting
                 </Heading>
                 <ul className="space-y-3">
@@ -347,7 +347,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Stratigo uses automated monitoring systems to track server uptime and performance
                     </Text>
                   </li>
@@ -355,7 +355,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Uptime statistics are calculated based on our internal monitoring data
                     </Text>
                   </li>
@@ -363,7 +363,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       Clients may request uptime reports by contacting support
                     </Text>
                   </li>
@@ -371,8 +371,8 @@ const SLA = () => {
               </div>
 
               {/* 7. Backup Policy */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   7. Backup Policy
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -383,7 +383,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Backup Frequency:</strong> Weekly automated backups
                     </Text>
                   </li>
@@ -391,7 +391,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Retention Period:</strong> Last 4 backups retained (approximately 1 month)
                     </Text>
                   </li>
@@ -399,7 +399,7 @@ const SLA = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700">
+                      <Text className="text-sm sm:text-base text-gray-700">
                       <strong>Restore Requests:</strong> Contact support for backup restoration
                     </Text>
                   </li>
@@ -412,21 +412,21 @@ const SLA = () => {
               </div>
 
               {/* 8. Changes to This SLA */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   8. Changes to This SLA
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
                   Stratigo reserves the right to modify this SLA at any time to reflect changes in our services, technology, or operational requirements.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Material changes will be communicated to active clients via email at least 30 days before taking effect.
                 </Text>
               </div>
 
               {/* 9. Contact Information */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   9. Contact Information
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">

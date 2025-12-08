@@ -314,46 +314,46 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Stats Strip with Gradient Background */}
-              <div className="bg-gradient-to-r from-navy via-electric to-navy p-5 sm:p-6 md:p-8">
+              {/* Stats Strip with Light Blue Background */}
+              <div className="bg-blue-50 p-5 sm:p-6 md:p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                   {/* Stat 1 */}
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-center !bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-center justify-center mb-2 sm:mb-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-electric/10 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Full-Service</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Marketing, Software & Hosting</p>
+                    <h4 className="text-lg sm:text-xl font-bold text-navy mb-1 sm:mb-2">Full-Service</h4>
+                    <p className="text-gray-700 text-xs sm:text-sm">Marketing, Software & Hosting</p>
                   </div>
 
                   {/* Stat 2 */}
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-center !bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-center justify-center mb-2 sm:mb-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-electric/10 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Global Reach</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Serving Businesses Worldwide</p>
+                    <h4 className="text-lg sm:text-xl font-bold text-navy mb-1 sm:mb-2">Global Reach</h4>
+                    <p className="text-gray-700 text-xs sm:text-sm">Serving Businesses Worldwide</p>
                   </div>
 
                   {/* Stat 3 */}
-                  <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="text-center !bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="flex items-center justify-center mb-2 sm:mb-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-electric/10 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       </div>
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Trusted Partner</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Built on Transparency & Results</p>
+                    <h4 className="text-lg sm:text-xl font-bold text-navy mb-1 sm:mb-2">Trusted Partner</h4>
+                    <p className="text-gray-700 text-xs sm:text-sm">Built on Transparency & Results</p>
                   </div>
                 </div>
               </div>
@@ -740,10 +740,7 @@ const Home = () => {
       </Section>
 
       {/* Who We Serve Section */}
-      <Section variant="content" className="relative overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+      <Section variant="content" className="bg-blue-50 relative overflow-hidden">
         
         <Container>
           <div className="max-w-6xl mx-auto relative z-10">
@@ -879,26 +876,26 @@ const Home = () => {
             </div>
 
             {/* Client Testimonial */}
-            <div className="bg-gradient-to-br from-navy to-navy/90 rounded-2xl p-8 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+            <div className="bg-gradient-to-br from-navy to-navy/90 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 text-white relative overflow-hidden px-4 sm:px-0">
+              <div className="absolute top-0 right-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white/5 rounded-full blur-2xl"></div>
               <div className="relative z-10">
-                <div className="flex items-start mb-6">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex flex-col sm:flex-row items-start mb-4 sm:mb-5 md:mb-6 gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 sm:mr-4">
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </div>
-                  <div>
-                    <Text className="text-xl text-white/90 leading-relaxed mb-4">
+                  <div className="flex-1 min-w-0">
+                    <Text className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 sm:mb-4">
                       "Stratigo transformed our window tinting business from local to digital-first. Our new website and online booking system has increased our client base by 300% in just 6 months."
                     </Text>
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white font-bold text-lg">JR</span>
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0">
+                        <span className="text-white font-bold text-sm sm:text-base md:text-lg">JR</span>
                       </div>
                       <div>
-                        <div className="font-semibold text-white">Jair Rivera</div>
-                        <div className="text-white/70 text-sm">Owner, Stratigo Window Tinting</div>
+                        <div className="font-semibold text-sm sm:text-base text-white">Jair Rivera</div>
+                        <div className="text-white/70 text-xs sm:text-sm">Owner, Stratigo Window Tinting</div>
                       </div>
                     </div>
                   </div>
@@ -911,7 +908,7 @@ const Home = () => {
       </Section>
 
       {/* Full-Width CTA Section */}
-      <Section variant="content" className="bg-gradient-to-br from-navy via-navy/95 to-electric py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Section variant="content" className="bg-gradient-to-br from-navy via-navy/95 to-electric py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -919,107 +916,107 @@ const Home = () => {
 
         <Container>
           <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
-            <div className="mb-16">
-              <div className="inline-block mb-6">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full text-sm uppercase tracking-wider border border-white/20">
+            <div className="mb-10 sm:mb-12 md:mb-16">
+              <div className="inline-block mb-4 sm:mb-6">
+                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full text-xs sm:text-sm uppercase tracking-wider border border-white/20">
                   Get Started Today
                 </span>
               </div>
-              <Heading level={2} className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+              <Heading level={2} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 Ready to Transform Your Business?
               </Heading>
-              <Text className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed">
+              <Text className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-4 sm:mb-6 max-w-4xl mx-auto leading-relaxed">
                 Your business deserves a partner that understands technology, marketing, and growth.
               </Text>
-              <Text className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+              <Text className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
                 At Stratigo, we combine strategy, innovation, and secure systems to help your brand achieve measurable success.
               </Text>
             </div>
 
             {/* Feature Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 bg-orange/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange/20 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <Text className="text-white font-semibold mb-2">Fast Implementation</Text>
-                <Text className="text-white/70 text-sm">Get your project started within 48 hours</Text>
+                <Text className="text-white font-semibold mb-1.5 sm:mb-2 text-sm sm:text-base">Fast Implementation</Text>
+                <Text className="text-white/70 text-xs sm:text-sm">Get your project started within 48 hours</Text>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-electric/20 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <Text className="text-white font-semibold mb-2">Expert Support</Text>
-                <Text className="text-white/70 text-sm">Dedicated team throughout your journey</Text>
+                <Text className="text-white font-semibold mb-1.5 sm:mb-2 text-sm sm:text-base">Expert Support</Text>
+                <Text className="text-white/70 text-xs sm:text-sm">Dedicated team throughout your journey</Text>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 bg-coral/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-coral/20 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
-                <Text className="text-white font-semibold mb-2">Proven Results</Text>
-                <Text className="text-white/70 text-sm">300% average client growth</Text>
+                <Text className="text-white font-semibold mb-1.5 sm:mb-2 text-sm sm:text-base">Proven Results</Text>
+                <Text className="text-white/70 text-xs sm:text-sm">300% average client growth</Text>
               </div>
             </div>
 
             {/* Main CTA */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-10 border border-white/20">
-              <Text className="text-lg sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 font-medium text-center sm:text-left">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 mb-8 sm:mb-10 border border-white/20">
+              <Text className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-4 sm:mb-6 md:mb-8 font-medium text-center sm:text-left">
                 Let's build something extraordinary together — from your website to your digital ecosystem.
               </Text>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center">
-                <Button variant="primary" className="w-full sm:w-auto bg-orange hover:bg-orange/90 text-white font-semibold py-4 px-6 sm:px-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-base sm:text-lg group justify-center">
-                  <span className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
+                <Button variant="primary" className="w-full sm:w-auto bg-orange hover:bg-orange/90 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg group flex items-center justify-center">
+                  <span className="flex items-center justify-center gap-2">
                     Book a Consultation
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
                 </Button>
-                <Button variant="secondary" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 sm:px-8 rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 text-base sm:text-lg backdrop-blur-sm justify-center">
+                <Button variant="secondary" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 text-sm sm:text-base md:text-lg backdrop-blur-sm flex items-center justify-center">
                   Contact Stratigo
                 </Button>
               </div>
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-white/80">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 md:gap-8 text-white/80">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-white">hello@stratigo.io</div>
-                  <div className="text-sm">General Inquiries</div>
+                  <div className="font-semibold text-white text-sm sm:text-base">hello@stratigo.io</div>
+                  <div className="text-xs sm:text-sm">General Inquiries</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-white">Free Consultation</div>
-                  <div className="text-sm">30-minute strategy call</div>
+                  <div className="font-semibold text-white text-sm sm:text-base">Free Consultation</div>
+                  <div className="text-xs sm:text-sm">30-minute strategy call</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-white">48-Hour Response</div>
-                  <div className="text-sm">Quick project turnaround</div>
+                  <div className="font-semibold text-white text-sm sm:text-base">48-Hour Response</div>
+                  <div className="text-xs sm:text-sm">Quick project turnaround</div>
                 </div>
               </div>
             </div>

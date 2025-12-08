@@ -101,7 +101,7 @@ const Navbar = () => {
             {/* Hamburger Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="flex flex-col items-center justify-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-electric-light rounded"
+              className="flex flex-col items-center justify-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-electric-light rounded bg-transparent hover:bg-transparent"
               aria-label="Toggle mobile menu"
             >
               <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
@@ -114,7 +114,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 lg:hidden ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-        <div className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-navy shadow-2xl transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-navy shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-700">
             <div className="flex items-center space-x-2">
@@ -127,7 +127,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={closeMobileMenu}
-              className="w-8 h-8 flex items-center justify-center text-white hover:text-electric-light transition-colors rounded-full hover:bg-white/10"
+              className="flex items-center justify-center text-white hover:text-electric-light transition-colors bg-transparent hover:bg-transparent"
               aria-label="Close mobile menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation Links */}
-          <div className="py-6">
+          <div className="py-6 pb-32 overflow-y-auto flex-1">
             <nav className="space-y-2">
               <Link
                 to="/"
@@ -216,13 +216,6 @@ const Navbar = () => {
               </Link>
               
               <Link
-                to="/contact"
-                className="block px-6 py-3 text-white hover:bg-electric-light hover:text-navy transition-all duration-200"
-                onClick={closeMobileMenu}
-              >
-                Contact
-              </Link>
-              <Link
                 to="/login"
                 className="block px-6 py-3 bg-electric hover:bg-electric-dark text-white font-semibold transition-all duration-200 mx-6 rounded-lg text-center"
                 onClick={closeMobileMenu}
@@ -233,12 +226,12 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Footer */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-700">
+          <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-gray-700">
             <div className="text-center">
               <p className="text-gray-400 text-sm mb-2">Get in touch</p>
               <Link
                 to="/contact"
-                className="inline-block bg-electric hover:bg-electric-dark text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200"
+                className="block px-6 py-3 bg-electric hover:bg-electric-dark text-white font-semibold transition-all duration-200 mx-6 rounded-lg text-center"
                 onClick={closeMobileMenu}
               >
                 Contact Us

@@ -45,28 +45,28 @@ const Hosting = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Left Content */}
             <div className="text-left text-white">
-              <div className="mb-6">
-                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
+              <div className="mb-4 sm:mb-6">
+                <Heading level={1} className="text-white text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 sm:mb-3">
                   Managed Hosting
                 </Heading>
-                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                <p className="text-white text-left text-base sm:text-lg md:text-xl font-medium text-white/90">
                   Built Exclusively For Our Clients
                 </p>
               </div>
               
-              <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+              <Text className="text-white text-left text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 text-white/90">
                 We design, host, and accelerate your entire online presence with fully managed VPS hosting tailored for business success.
               </Text>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="primary" className="w-full sm:w-auto" onClick={scrollToPricing}>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button variant="primary" className="w-full sm:w-auto text-sm sm:text-base" onClick={scrollToPricing}>
                   Get Started
                 </Button>
-                <Button variant="secondary" className="w-full sm:w-auto" onClick={scrollToPricing}>
+                <Button variant="secondary" className="w-full sm:w-auto text-sm sm:text-base" onClick={scrollToPricing}>
                   View Plans
                 </Button>
               </div>
@@ -109,27 +109,27 @@ const Hosting = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-electric/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
         <Container>
-          <div className="text-center mb-16 relative z-10">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 relative z-10 px-4 sm:px-0">
             {/* Badge */}
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-coral/10 text-coral font-semibold rounded-full text-sm uppercase tracking-wider">
+            <div className="inline-block mb-4 sm:mb-6">
+              <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-coral/10 text-coral font-semibold rounded-full text-xs sm:text-sm uppercase tracking-wider">
                 Hosting Plans
               </span>
             </div>
 
-            <Heading level={2} className="text-4xl md:text-5xl font-bold text-navy mb-6">
+            <Heading level={2} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 sm:mb-6">
               Stratigo Hosting Solutions
             </Heading>
-            <Text className="text-xl text-gray-700 max-w-3xl mx-auto mb-4">
+            <Text className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-3 sm:mb-4">
               Exclusively for Stratigo Development Clients
             </Text>
-            <Text className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            <Text className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
               Fully managed cloud hosting tailored for business websites we design and develop.
             </Text>
             
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
             {/* Standard Plan */}
             <div className="pricing-card">
               <div className="text-center mb-8">
@@ -1061,58 +1061,58 @@ const Hosting = () => {
           </div>
 
           {/* Why Choose Stratigo Section */}
-          <div className="mt-20 relative z-10">
-            <div className="text-center mb-16">
+          <div className="mt-12 sm:mt-16 md:mt-20 relative z-10">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
               {/* Badge */}
-              <div className="inline-block mb-6">
-                <span className="px-4 py-2 bg-coral/10 text-coral font-semibold rounded-full text-sm uppercase tracking-wider">
+              <div className="inline-block mb-4 sm:mb-6">
+                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-coral/10 text-coral font-semibold rounded-full text-xs sm:text-sm uppercase tracking-wider">
                   Why Choose Us
                 </span>
               </div>
 
-              <Heading level={3} className="text-3xl md:text-4xl font-bold text-navy mb-6">
+              <Heading level={3} className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-4 sm:mb-6">
                 Why Choose Stratigo for Your Hosting?
               </Heading>
-              <Text className="text-xl text-gray-700 max-w-4xl mx-auto mb-4">
+              <Text className="text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-3 sm:mb-4">
                 Stratigo Hosting is not your typical shared hosting service. It's an exclusive, high-performance infrastructure tailored for businesses that demand reliability, control, and expert-level support.
               </Text>
-              <Text className="text-lg text-gray-600 max-w-4xl mx-auto">
+              <Text className="text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
                 We deliver a fully managed environment designed to scale with your website and your business.
               </Text>
             </div>
 
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <div className="max-w-6xl mx-auto px-4 sm:px-0">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-12 sm:mb-14 md:mb-16">
                 {/* Built for Business Growth */}
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 p-5 sm:p-6 md:p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
                   {/* Individual blur element */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute -top-20 -right-20 w-32 h-32 sm:w-40 sm:h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
-                  <div className="flex items-center mb-6 relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center mb-4 sm:mb-6 relative z-10">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
-                    <h4 className="text-2xl font-bold text-navy">Built for Business Growth</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-navy">Built for Business Growth</h4>
                   </div>
-                  <p className="text-gray-700 leading-relaxed relative z-10">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed relative z-10">
                     Our hosting is purpose-built for clients who work with us on software development and strategic digital solutions. Every hosting plan is engineered to support real-world business needs, with optimized performance, private deployment setups, and secure data management.
                   </p>
                 </div>
 
                 {/* Secure. Scalable. Supported. */}
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 p-5 sm:p-6 md:p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group">
                   {/* Individual blur element */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-electric/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute -top-20 -right-20 w-32 h-32 sm:w-40 sm:h-40 bg-electric/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
-                  <div className="flex items-center mb-6 relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-electric to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center mb-4 sm:mb-6 relative z-10">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-electric to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                    <h4 className="text-2xl font-bold text-navy">Secure. Scalable. Supported.</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-navy">Secure. Scalable. Supported.</h4>
                   </div>
                   <div className="space-y-3 relative z-10">
                     <div className="flex items-center">
@@ -1156,12 +1156,12 @@ const Hosting = () => {
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-coral/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="flex items-center mb-6 relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-coral to-pink-500 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-coral to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <h4 className="text-2xl font-bold text-navy">A Strategic Hosting Partner</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-navy">A Strategic Hosting Partner</h4>
                   </div>
                   <p className="text-gray-700 leading-relaxed relative z-10">
                     Your hosting provider should understand your business. With Stratigo, your website is supported by the same team that builds and maintains it. That means faster fixes, proactive support, and full alignment between your hosting, your marketing, and your development needs.
@@ -1174,12 +1174,12 @@ const Hosting = () => {
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-orange/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="flex items-center mb-6 relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange to-red-500 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-orange to-red-500 rounded-xl sm:rounded-2xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </div>
-                    <h4 className="text-2xl font-bold text-navy">Designed Exclusively for Stratigo Clients</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-navy">Designed Exclusively for Stratigo Clients</h4>
                   </div>
                   <p className="text-gray-700 leading-relaxed relative z-10">
                     We only offer hosting to clients actively working with us on website development and/or digital strategy. This allows us to focus on delivering a premium experience and avoiding one-size-fits-all limitations.
@@ -1199,7 +1199,7 @@ const Hosting = () => {
                 </span>
               </div>
 
-              <Heading level={3} className="text-3xl md:text-4xl font-bold text-navy mb-6">
+              <Heading level={3} className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-6">
                 Why Stratigo Hosting Is Different
               </Heading>
               <Text className="text-lg text-gray-700 max-w-4xl mx-auto mb-4">
@@ -1595,7 +1595,7 @@ const Hosting = () => {
                   onClick={scrollToPricing}
                 >
                   <span className="flex items-center gap-2">
-                    View Our Hosting Plans
+                    Hosting Plans
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -1737,7 +1737,7 @@ const Hosting = () => {
       </Section>
 
       {/* Modern CTA Section */}
-      <section className="w-full bg-gradient-to-br from-navy via-navy to-electric py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="w-full bg-gradient-to-br from-navy via-navy to-electric py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Enhanced decorative background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-electric/20 rounded-full blur-3xl"></div>
@@ -1748,77 +1748,77 @@ const Hosting = () => {
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
           {/* Badge */}
-          <div className="inline-block mb-6">
-            <span className="px-4 py-2 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full text-sm uppercase tracking-wider border border-white/20">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full text-xs sm:text-sm uppercase tracking-wider border border-white/20">
               Get Started Today
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ready to Host Your Website?
           </h2>
           
-          <p className="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed">
             Stratigo Hosting isn't just about uptime — it's about peace of mind.
             You're not just getting a server. You're getting a dedicated partner who understands your website, your goals, and your growth.
           </p>
 
           {/* Feature Highlights */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Reliable Infrastructure</h3>
-              <p className="text-white/80">World-class cloud servers with 99.9% uptime guarantee</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Reliable Infrastructure</h3>
+              <p className="text-white/80 text-sm sm:text-base">World-class cloud servers with 99.9% uptime guarantee</p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Scalable Solutions</h3>
-              <p className="text-white/80">Grow confidently with infrastructure that adapts to your needs</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Scalable Solutions</h3>
+              <p className="text-white/80 text-sm sm:text-base">Grow confidently with infrastructure that adapts to your needs</p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Expert Support</h3>
-              <p className="text-white/80">Priority support from the team that built your website</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Expert Support</h3>
+              <p className="text-white/80 text-sm sm:text-base">Priority support from the team that built your website</p>
             </div>
           </div>
 
           {/* Main CTA Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20 mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-12 border border-white/20 mb-6 sm:mb-8">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
                 Choose Your Plan and Get Online Fast
               </h3>
-              <p className="text-lg text-white/90 mb-8">
+              <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8">
                 Whether you're launching your first site or scaling an existing platform, Stratigo gives you the tools, infrastructure, and support you need — without the complexity.
               </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <button 
                   onClick={scrollToPricing}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base"
                 >
                   View Hosting Plans
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
-                <button className="bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
+                <button className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
                   Book a Free Setup Call
                 </button>
               </div>

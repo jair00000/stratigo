@@ -28,12 +28,12 @@ const Cookies = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-5xl md:text-6xl mb-6">
+          <div className="max-w-4xl text-center text-white px-4 sm:px-6 md:px-12">
+            <Heading level={1} variant="hero" className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
               Cookie Policy
             </Heading>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-lg">
+            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-sm sm:text-base md:text-lg">
               Last Updated: {lastUpdated}
             </Text>
           </div>
@@ -43,8 +43,8 @@ const Cookies = () => {
       {/* Cookie Policy Content */}
       <Section variant="content">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-200 p-5 sm:p-6 md:p-8 lg:p-12">
               
               {/* Introduction */}
               <div className="mb-8">
@@ -60,8 +60,8 @@ const Cookies = () => {
               </div>
 
               {/* 1. What Are Cookies? */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   1. What Are Cookies?
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -76,8 +76,8 @@ const Cookies = () => {
               </div>
 
               {/* 2. How We Use Cookies */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   2. How We Use Cookies
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-6">
@@ -92,7 +92,7 @@ const Cookies = () => {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <h3 className="text-xl font-bold text-navy mb-3">a. Essential Cookies</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">a. Essential Cookies</h3>
                       <Text className="text-gray-700 leading-relaxed mb-3">
                         These cookies are required for our Website to function properly.
                         They allow you to:
@@ -127,7 +127,7 @@ const Cookies = () => {
                       <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                     </svg>
                     <div>
-                      <h3 className="text-xl font-bold text-navy mb-3">b. Performance & Analytics Cookies</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">b. Performance & Analytics Cookies</h3>
                       <Text className="text-gray-700 leading-relaxed mb-3">
                         Used to collect information on how visitors use our Website (e.g., pages visited, time spent).
                         We use this data to:
@@ -168,7 +168,7 @@ const Cookies = () => {
                       <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <h3 className="text-xl font-bold text-navy mb-3">c. Functional Cookies</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">c. Functional Cookies</h3>
                       <Text className="text-gray-700 leading-relaxed mb-3">
                         Enable enhanced functionality such as remembering preferences (language, form data, etc.)
                       </Text>
@@ -186,7 +186,7 @@ const Cookies = () => {
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <h3 className="text-xl font-bold text-navy mb-3">d. Marketing & Advertising Cookies</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">d. Marketing & Advertising Cookies</h3>
                       <Text className="text-gray-700 leading-relaxed mb-3">
                         Used occasionally to measure the effectiveness of marketing campaigns.
                         They help us display relevant ads or track referrals from third-party sources (if enabled).
@@ -197,8 +197,8 @@ const Cookies = () => {
               </div>
 
               {/* 3. Third-Party Cookies */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   3. Third-Party Cookies
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -209,7 +209,7 @@ const Cookies = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       <strong>Google Analytics</strong> – for visitor tracking and usage reports
                     </Text>
                   </li>
@@ -217,7 +217,7 @@ const Cookies = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       <strong>Google Ads or Meta Pixel</strong> (if applicable) – for ad conversions and retargeting
                     </Text>
                   </li>
@@ -225,7 +225,7 @@ const Cookies = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       <strong>Hosting and CDN providers</strong> – for faster website delivery
                     </Text>
                   </li>
@@ -239,8 +239,8 @@ const Cookies = () => {
               </div>
 
               {/* 4. How to Manage or Disable Cookies */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   4. How to Manage or Disable Cookies
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -251,7 +251,7 @@ const Cookies = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       You can accept or decline cookies via the pop-up banner when first visiting our site.
                     </Text>
                   </li>
@@ -288,34 +288,34 @@ const Cookies = () => {
               </div>
 
               {/* 5. Data Retention */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   5. Data Retention
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
                   We retain cookie-related data for as long as necessary to achieve the stated purposes.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Analytics data is typically anonymized and stored only for statistical reporting.
                 </Text>
               </div>
 
               {/* 6. Updates to This Policy */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   6. Updates to This Policy
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
                   We may update this Cookie Policy periodically to reflect changes in technology or law.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Any updates will be posted on this page with an updated revision date.
                 </Text>
               </div>
 
               {/* 7. Contact Us */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   7. Contact Us
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">

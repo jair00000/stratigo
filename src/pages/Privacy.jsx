@@ -28,12 +28,12 @@ const Privacy = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         
         <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-5xl md:text-6xl mb-6">
+          <div className="max-w-4xl text-center text-white px-4 sm:px-6 md:px-12">
+            <Heading level={1} variant="hero" className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
               Privacy Policy
             </Heading>
             
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-lg">
+            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-sm sm:text-base md:text-lg">
               Last Updated: {lastUpdated}
             </Text>
           </div>
@@ -43,20 +43,20 @@ const Privacy = () => {
       {/* Privacy Content */}
       <Section variant="content">
         <Container>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-0">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-200 p-5 sm:p-6 md:p-8 lg:p-12">
               
               {/* Introduction */}
               <div className="mb-8">
-                <Text className="text-lg text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                   At Stratigo Software Development Services ("Stratigo," "we," "our," or "us"), we respect your privacy and are committed to protecting the personal information you share with us.
                   This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website, contact us, or use our services.
                 </Text>
               </div>
 
               {/* 1. Information We Collect */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   1. Information We Collect
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">
@@ -65,7 +65,7 @@ const Privacy = () => {
 
                 {/* a. Personal Information */}
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-navy mb-3">a. Personal Information</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">a. Personal Information</h3>
                   <Text className="text-gray-700 leading-relaxed mb-3">
                     When you contact or engage with us, we may collect:
                   </Text>
@@ -74,7 +74,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         Name, company name, and contact details (email, phone number)
                       </Text>
                     </li>
@@ -82,7 +82,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         Business or project information you submit via forms or emails
                       </Text>
                     </li>
@@ -90,7 +90,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         Billing and payment information for invoicing purposes
                       </Text>
                     </li>
@@ -99,7 +99,7 @@ const Privacy = () => {
 
                 {/* b. Technical Information */}
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-navy mb-3">b. Technical Information</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">b. Technical Information</h3>
                   <Text className="text-gray-700 leading-relaxed mb-3">
                     Automatically collected through our website or hosting systems:
                   </Text>
@@ -108,7 +108,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         IP address and device information
                       </Text>
                     </li>
@@ -116,7 +116,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         Browser type and operating system
                       </Text>
                     </li>
@@ -124,7 +124,7 @@ const Privacy = () => {
                       <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
-                      <Text className="text-gray-700 leading-relaxed">
+                      <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         Pages visited, time spent, and referral source (analytics)
                       </Text>
                     </li>
@@ -133,16 +133,16 @@ const Privacy = () => {
 
                 {/* c. Client Data */}
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold text-navy mb-3">c. Client Data</h3>
-                  <Text className="text-gray-700 leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-bold text-navy mb-2 sm:mb-3">c. Client Data</h3>
+                  <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     If you are a hosting or software client, we may process limited data stored or transmitted through our managed servers and systems solely for maintenance, security, or support purposes.
                   </Text>
                 </div>
               </div>
 
               {/* 2. How We Use Your Information */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   2. How We Use Your Information
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -153,7 +153,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Provide, manage, and improve our services
                     </Text>
                   </li>
@@ -161,7 +161,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Communicate with you regarding inquiries, projects, or support
                     </Text>
                   </li>
@@ -169,7 +169,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Process billing and maintain client records
                     </Text>
                   </li>
@@ -177,7 +177,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Enhance website functionality and user experience
                     </Text>
                   </li>
@@ -185,7 +185,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Comply with legal and contractual obligations
                     </Text>
                   </li>
@@ -198,8 +198,8 @@ const Privacy = () => {
               </div>
 
               {/* 3. Data Security */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   3. Data Security
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -210,7 +210,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Encrypted data transmission (SSL/HTTPS)
                     </Text>
                   </li>
@@ -218,7 +218,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Secure Virtual Private Servers (VPS) for hosting clients
                     </Text>
                   </li>
@@ -226,7 +226,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Regular backups and access control systems
                     </Text>
                   </li>
@@ -234,7 +234,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Continuous monitoring to prevent unauthorized access
                     </Text>
                   </li>
@@ -247,8 +247,8 @@ const Privacy = () => {
               </div>
 
               {/* 4. Cookies and Analytics */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   4. Cookies and Analytics
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -259,7 +259,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Understand website traffic and performance
                     </Text>
                   </li>
@@ -267,19 +267,19 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Improve content relevance and navigation
                     </Text>
                   </li>
                 </ul>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   You can control or disable cookies in your browser settings. No personally identifiable data is stored in these analytics.
                 </Text>
               </div>
 
               {/* 5. Data Retention */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   5. Data Retention
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -290,7 +290,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Fulfill the purposes outlined in this Policy
                     </Text>
                   </li>
@@ -298,19 +298,19 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Comply with legal, accounting, or reporting obligations
                     </Text>
                   </li>
                 </ul>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Client data related to hosting or software projects may be deleted upon termination or by written request.
                 </Text>
               </div>
 
               {/* 6. Your Rights */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   6. Your Rights
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -321,7 +321,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Access, correct, or delete your personal data
                     </Text>
                   </li>
@@ -329,7 +329,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Withdraw consent for marketing communications
                     </Text>
                   </li>
@@ -337,7 +337,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Request a copy of your stored information
                     </Text>
                   </li>
@@ -350,8 +350,8 @@ const Privacy = () => {
               </div>
 
               {/* 7. Sharing of Information */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   7. Sharing of Information
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
@@ -362,7 +362,7 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Service providers assisting in payment processing, analytics, or infrastructure management
                     </Text>
                   </li>
@@ -370,45 +370,45 @@ const Privacy = () => {
                     <svg className="w-5 h-5 text-electric mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <Text className="text-gray-700 leading-relaxed">
+                    <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Legal or regulatory authorities when required by law
                     </Text>
                   </li>
                 </ul>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   All third-party partners are bound by confidentiality and data protection agreements.
                 </Text>
               </div>
 
               {/* 8. International Data Transfers */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   8. International Data Transfers
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
                   As a digital services provider, Stratigo may store or process data on servers located in different countries, including the Philippines and the United States.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   We ensure all data transfers comply with applicable data protection laws (GDPR, DPA, etc.) through secure and lawful means.
                 </Text>
               </div>
 
               {/* 9. Updates to This Policy */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   9. Updates to This Policy
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-3">
                   We may update this Privacy Policy periodically to reflect service changes or regulatory requirements.
                 </Text>
-                <Text className="text-gray-700 leading-relaxed">
+                <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Revisions will be posted on this page with an updated "Last Modified" date.
                 </Text>
               </div>
 
               {/* 10. Contact Us */}
-              <div className="mb-8">
-                <Heading level={2} className="text-2xl font-bold text-navy mb-4">
+              <div className="mb-6 sm:mb-8">
+                <Heading level={2} className="text-xl sm:text-2xl font-bold text-navy mb-3 sm:mb-4">
                   10. Contact Us
                 </Heading>
                 <Text className="text-gray-700 leading-relaxed mb-4">

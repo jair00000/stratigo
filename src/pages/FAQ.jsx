@@ -210,74 +210,94 @@ const FAQ = () => {
 
       {/* Hero Section */}
       <section 
-        className="w-full min-h-[60vh] bg-cover bg-center bg-no-repeat relative flex items-center"
+        className="w-full h-[70vh] bg-cover bg-center bg-no-repeat relative flex items-center"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
+        {/* Overlay */}
         <div className="absolute inset-0 bg-overlay"></div>
         
-        <div className="relative z-10 w-full flex items-center justify-center">
-          <div className="max-w-4xl text-center text-white px-12">
-            <Heading level={1} variant="hero" className="text-white text-center text-5xl md:text-6xl mb-6">
-              Frequently Asked Questions
-            </Heading>
-            
-            <Text variant="hero" className="text-white text-center max-w-none mx-auto text-xl mb-8">
-              Find quick answers to common questions about our services
-            </Text>
-
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search FAQs..."
-                  className="w-full px-6 py-4 pr-24 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-electric"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-                    aria-label="Clear search"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
-                <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-left text-white">
+              <div className="mb-6">
+                <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
+                  Frequently Asked Questions
+                </Heading>
+                <p className="text-white text-left text-lg md:text-xl font-medium text-white/90">
+                  Find quick answers to common questions about our services
+                </p>
               </div>
-              {searchQuery && (
-                <Text className="text-white/80 text-sm mt-2">
-                  Searching for: "{searchQuery}"
-                </Text>
-              )}
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search FAQs..."
+                    className="w-full px-6 py-4 pr-12 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-electric"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                      aria-label="Clear search"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                  <svg className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                {searchQuery && (
+                  <p className="text-white/80 text-sm mt-2">
+                    Searching for: "{searchQuery}"
+                  </p>
+                )}
+              </div>
+            </div>
+            
+            {/* Right Side - Stats Cards */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {/* Stat 1 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">{faqs.length}+</div>
+                <div className="text-white/80 text-sm">Total Questions</div>
+              </div>
+              {/* Stat 2 */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="text-4xl font-bold text-white mb-2">{categories.length - 1}</div>
+                <div className="text-white/80 text-sm">Categories</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <Section variant="content" className="bg-gray-50 py-8">
+      <Section variant="content" className="bg-gray-50 py-6 sm:py-8">
         <Container>
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="max-w-6xl mx-auto px-4 sm:px-0">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
+                  className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base ${
                     activeCategory === cat.id
                       ? "bg-electric text-white shadow-lg"
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                   }`}
                 >
-                  <span>{cat.icon}</span>
+                  <span className="text-sm sm:text-base">{cat.icon}</span>
                   <span>{cat.name}</span>
-                  <span className={`text-xs px-2 py-1 rounded-full ${
+                  <span className={`text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full ${
                     activeCategory === cat.id ? "bg-white/20" : "bg-gray-200"
                   }`}>
                     {cat.id === "all" ? faqs.length : faqs.filter(f => f.category === cat.id).length}
@@ -292,27 +312,27 @@ const FAQ = () => {
       {/* FAQ List */}
       <Section variant="content">
         <Container>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto px-4 sm:px-0">
             {filteredFAQs.length === 0 ? (
-              <div className="text-center py-12">
-                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="text-center py-8 sm:py-10 md:py-12">
+                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-gray-400 mx-auto mb-3 sm:mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <Text className="text-gray-500 text-lg">No FAQs found matching your search.</Text>
+                <Text className="text-gray-500 text-base sm:text-lg">No FAQs found matching your search.</Text>
                 <button
                   onClick={() => {
                     setSearchQuery("");
                     setActiveCategory("all");
                   }}
-                  className="mt-4 text-electric hover:underline"
+                  className="mt-3 sm:mt-4 text-electric hover:underline text-sm sm:text-base"
                 >
                   Clear filters
                 </button>
               </div>
             ) : (
               <>
-                <div className="mb-6 flex items-center justify-between">
-                  <Text className="text-gray-600">
+                <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+                  <Text className="text-sm sm:text-base text-gray-600">
                     Showing {filteredFAQs.length} {filteredFAQs.length === 1 ? 'question' : 'questions'}
                     {activeCategory !== "all" && ` in ${categories.find(c => c.id === activeCategory)?.name}`}
                     {searchQuery && ` matching "${searchQuery}"`}
@@ -323,9 +343,9 @@ const FAQ = () => {
                         setSearchQuery("");
                         setActiveCategory("all");
                       }}
-                      className="text-sm text-electric hover:underline flex items-center"
+                      className="text-xs sm:text-sm text-electric hover:underline flex items-center"
                     >
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       Clear all filters
@@ -333,7 +353,7 @@ const FAQ = () => {
                   )}
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {filteredFAQs.map((faq, index) => {
                     // Function to highlight search terms
                     const highlightText = (text, query) => {
@@ -349,19 +369,19 @@ const FAQ = () => {
 
                     return (
                       <details key={index} className="bg-white rounded-lg shadow border border-gray-200 overflow-hidden group">
-                        <summary className="px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between">
-                          <Text className="font-semibold text-navy flex items-center flex-1">
-                            <svg className="w-5 h-5 text-electric mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <summary className="px-4 sm:px-5 md:px-6 py-3 sm:py-4 cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between">
+                          <Text className="font-semibold text-sm sm:text-base text-navy flex items-center flex-1 min-w-0">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-electric mr-2 sm:mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span>{highlightText(faq.question, searchQuery)}</span>
+                            <span className="flex-1 min-w-0">{highlightText(faq.question, searchQuery)}</span>
                           </Text>
-                          <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-open:rotate-180 transition-transform ml-2 sm:ml-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </summary>
-                        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                          <Text className="text-gray-700 leading-relaxed">
+                        <div className="px-4 sm:px-5 md:px-6 py-3 sm:py-4 bg-gray-50 border-t border-gray-200">
+                          <Text className="text-sm sm:text-base text-gray-700 leading-relaxed">
                             {highlightText(faq.answer, searchQuery)}
                           </Text>
                         </div>
