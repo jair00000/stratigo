@@ -970,17 +970,21 @@ const Home = () => {
                 Let's build something extraordinary together — from your website to your digital ecosystem.
               </Text>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
-                <Button variant="primary" className="w-full sm:w-auto bg-orange hover:bg-orange/90 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg group flex items-center justify-center">
-                  <span className="flex items-center justify-center gap-2">
-                    Book a Consultation
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </span>
-                </Button>
-                <Button variant="secondary" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 text-sm sm:text-base md:text-lg backdrop-blur-sm flex items-center justify-center">
-                  Contact Stratigo
-                </Button>
+                <Link to="/contact">
+                  <Button variant="primary" className="w-full sm:w-auto bg-orange hover:bg-orange/90 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg group flex items-center justify-center">
+                    <span className="flex items-center justify-center gap-2">
+                      Book a Consultation
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="secondary" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl border-2 border-white/30 hover:border-white/50 transition-all duration-300 text-sm sm:text-base md:text-lg backdrop-blur-sm flex items-center justify-center">
+                    Contact Stratigo
+                  </Button>
+                </Link>
               </div>
             </div>
 
