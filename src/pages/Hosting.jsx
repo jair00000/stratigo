@@ -1049,12 +1049,16 @@ const Hosting = () => {
                   Every business is unique, and we're here to help you choose the hosting plan that aligns with your goals, traffic, and budget. Let's talk about what you need.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button variant="primary" className="text-base px-6 py-3">
-                    Schedule a Consultation
-                  </Button>
-                  <Button variant="secondary" className="text-base px-6 py-3">
-                    Contact Our Team
-                  </Button>
+                  <Link to="/contact" className="w-full sm:w-auto flex justify-center">
+                    <Button variant="primary" className="w-full sm:w-auto text-base px-6 py-3">
+                      Schedule a Consultation
+                    </Button>
+                  </Link>
+                  <Link to="/contact" className="w-full sm:w-auto flex justify-center">
+                    <Button variant="secondary" className="w-full sm:w-auto text-base px-6 py-3">
+                      Contact Our Team
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1818,9 +1822,11 @@ const Hosting = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
-                <button className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
-                  Book a Free Setup Call
-                </button>
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <button type="button" className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
+                    Book a Free Setup Call
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

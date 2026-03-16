@@ -46,12 +46,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/who-we-serve" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/who-we-serve')}>
+                  <Link to="/who-we-serve" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Who We Serve
                   </Link>
                 </li>
                 <li>
-                  <Link to="/process" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/process')}>
+                  <Link to="/process" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Process
                   </Link>
                 </li>
@@ -61,7 +61,7 @@ const Footer = () => {
                   </span>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/contact')}>
+                  <Link to="/contact" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -73,12 +73,12 @@ const Footer = () => {
               <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Services</h4>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <Link to="/services/marketing" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/services/marketing')}>
+                  <Link to="/services/marketing" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Marketing Solutions
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services/software-development" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/services/software-development')}>
+                  <Link to="/services/software-development" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Software Solutions
                   </Link>
                   <div className="text-xs sm:text-sm text-gray-400 mt-1 ml-3 sm:ml-4">
@@ -86,7 +86,7 @@ const Footer = () => {
                   </div>
                 </li>
                 <li>
-                  <Link to="/services/hosting" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/services/hosting')}>
+                  <Link to="/services/hosting" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Hosting Solutions
                   </Link>
                   <div className="text-xs sm:text-sm text-gray-400 mt-1 ml-3 sm:ml-4">
@@ -101,22 +101,22 @@ const Footer = () => {
               <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Resources</h4>
               <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 <li>
-                  <Link to="/blog" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/blog')}>
+                  <Link to="/blog" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Blog / Insights
                   </Link>
                 </li>
                 <li>
-                  <Link to="/case-studies" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/case-studies')}>
+                  <Link to="/case-studies" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Case Studies
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/faq')}>
+                  <Link to="/faq" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     FAQs
                   </Link>
                 </li>
                 <li>
-                  <Link to="/support" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/support')}>
+                  <Link to="/support" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Support Center
                   </Link>
                 </li>
@@ -125,22 +125,22 @@ const Footer = () => {
               <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Legal</h4>
               <ul className="space-y-2 sm:space-y-3">
                 <li>
-                  <Link to="/terms" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/terms')}>
+                  <Link to="/terms" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/privacy')}>
+                  <Link to="/privacy" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/cookies" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/cookies')}>
+                  <Link to="/cookies" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Cookie Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/sla" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/sla')}>
+                  <Link to="/sla" className="text-sm sm:text-base text-gray-300 hover:text-electric transition-colors">
                     Service Level & Uptime
                   </Link>
                 </li>
@@ -286,13 +286,13 @@ const Footer = () => {
             
             {/* Utility Links */}
             <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 text-xs sm:text-sm text-gray-400">
-              <Link to="/accessibility" className="hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/accessibility')}>
+              <Link to="/accessibility" className="hover:text-electric transition-colors">
                 Accessibility Statement
               </Link>
-              <Link to="/do-not-sell" className="hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/do-not-sell')}>
+              <Link to="/do-not-sell" className="hover:text-electric transition-colors">
                 Do Not Sell My Information
               </Link>
-              <Link to="/sitemap" className="hover:text-electric transition-colors" onClick={(e) => handleLinkClick(e, '/sitemap')}>
+              <Link to="/sitemap" className="hover:text-electric transition-colors">
                 Sitemap
               </Link>
             </div>

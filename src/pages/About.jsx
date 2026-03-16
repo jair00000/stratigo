@@ -7,10 +7,6 @@ import HeroImage from "../assets/images/home/Home_hero.webp";
 const About = () => {
   const navigate = useNavigate();
   
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const navigateToServices = () => {
     // Navigate to home page with hash
     navigate('/', { state: { scrollTo: 'services' } });
@@ -32,7 +28,7 @@ const About = () => {
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+              {/* Left Content */}
             <div className="text-left text-white">
               <div className="mb-6">
                 <Heading level={1} className="text-white text-left text-5xl md:text-6xl lg:text-7xl font-bold mb-3">
@@ -42,22 +38,23 @@ const About = () => {
                   Where technology and strategy unite to create meaningful growth for businesses.
                 </p>
               </div>
-              
+                
               <Text className="text-white text-left text-lg md:text-xl leading-relaxed mb-8 text-white/90">
                 We're your strategic growth partner in the digital world.
-              </Text>
+                </Text>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact" className="w-full sm:w-auto">
                   <Button 
                     variant="primary" 
                     className="w-full sm:w-auto bg-gradient-to-r from-electric to-blue-600 hover:from-electric/90 hover:to-blue-600/90 text-white font-bold py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl shadow-2xl hover:shadow-electric/25 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group text-xs sm:text-sm md:text-base"
-                    onClick={scrollToContact}
                   >
                     Get in Touch
                     <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Button>
+                </Link>
                   <Button 
                     variant="secondary" 
                     className="w-full sm:w-auto bg-white hover:bg-white/90 text-navy font-semibold py-2.5 sm:py-3 md:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl transform hover:scale-105 transition-all duration-300 text-xs sm:text-sm md:text-base"
@@ -68,25 +65,25 @@ const About = () => {
                 </div>
               </div>
 
-            {/* Right Side - Stats Cards */}
+              {/* Right Side - Stats Cards */}
             <div className="hidden lg:grid grid-cols-2 gap-4">
               {/* Stat 1 */}
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <div className="text-4xl font-bold text-white mb-2">Quality</div>
                 <div className="text-white/80 text-sm">Premium Service Quality</div>
-              </div>
+                </div>
 
               {/* Stat 2 */}
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <div className="text-4xl font-bold text-white mb-2">24/7</div>
                 <div className="text-white/80 text-sm">Expert Support</div>
-              </div>
+                </div>
 
               {/* Stat 3 */}
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <div className="text-4xl font-bold text-white mb-2">100%</div>
                 <div className="text-white/80 text-sm">Guaranteed Project Delivery</div>
-              </div>
+                </div>
 
               {/* Stat 4 */}
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -371,9 +368,27 @@ const About = () => {
                     </svg>
                   </button>
                 </Link>
-                <button className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm sm:text-base md:text-lg">
+                <a
+                  href={[
+                    'mailto:hello@stratigo.io',
+                    '?subject=Schedule%20a%20call%20with%20Stratigo',
+                    '&body=Hi%20Stratigo%20team%2C%0A%0A',
+                    "I'd%20like%20to%20schedule%20a%20call.%0A%0A",
+                    'Preferred%20dates%2Ftimes%3A%20%0A',
+                    'Time%20zone%3A%20%0A',
+                    'Phone%20or%20Zoom%3A%20%0A%0A',
+                    'What%20I%20need%20help%20with%3A%20%0A%0A',
+                    'Thanks%2C%0A',
+                    '%5BYour%20Name%5D',
+                  ].join('')}
+                  onClick={() => {
+                    // Also route to the Contact page for users who prefer the form.
+                    navigate('/contact');
+                  }}
+                  className="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white font-semibold py-3 sm:py-4 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl backdrop-blur-sm border border-white/30 hover:border-white/50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm sm:text-base md:text-lg"
+                >
                   Schedule a Call
-                </button>
+                </a>
               </div>
             </div>
           </div>

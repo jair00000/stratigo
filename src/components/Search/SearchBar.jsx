@@ -90,13 +90,21 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => {
             const value = e.target.value;
+            setQuery(value);
+            if (value.trim().length > 0) {
+              setIsOpen(true);
+            } else {
+              setIsOpen(false);
+            }
             handleSearch(value);
           }}
           onFocus={() => {
-            setIsOpen(true);
-            // If there's a query, trigger search to show results
-            if (query.trim().length >= 2) {
-              handleSearch(query);
+            // Only open dropdown when user has typed something
+            if (query.trim().length > 0) {
+              setIsOpen(true);
+              if (query.trim().length >= 2) {
+                handleSearch(query);
+              }
             }
           }}
           onKeyDown={(e) => {
@@ -152,7 +160,7 @@ const SearchBar = () => {
           )}
         </div>
 
-      {isOpen && (
+      {isOpen && query.trim().length > 0 && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200/50 backdrop-blur-sm z-50 w-full overflow-hidden">
           {/* Fixed height container with visible scrollbar */}
           <div 

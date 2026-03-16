@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Section, { Container, Heading, Text } from "../components/Section";
 import Button from "../components/Button";
 import HeroImage from "../assets/images/home/Home_hero.webp";
+import ProjectPreviewModal from "../components/ProjectPreviewModal";
+import ProjectStoryModal from "../components/ProjectStoryModal";
+
+const FEATURED_PROJECTS = [
+  {
+    id: "remedi-window-solutions",
+    title: "Remedi Window Solutions",
+    subtitle: "Professional window services & installation",
+    role: "Website Design & Build",
+    stack: "Marketing Site · Conversion Focused UX",
+    live: "https://remediwindowsolutions.com/",
+    story:
+      "Remedi Window Solutions needed a modern, trustworthy web presence to explain their commercial and residential film services in plain language. We designed a clean, conversion-focused marketing site that walks visitors from problem awareness to service selection and simple contact paths, with content structured for future SEO growth.",
+    // screenshot: require("../assets/projects/remedi-window.webp"),
+  },
+  {
+    id: "wags-window-solutions",
+    title: "Wags Window Solutions",
+    subtitle: "Authorized Madico Dealer · National window film & security film installer",
+    role: "Informational Website",
+    stack: "Training Platform (Coming Soon)",
+    live: "https://wagswindow.com/",
+    story:
+      "Wags Window Solutions is a nationally operating subcontractor and Authorized Madico Dealer. This site is focused on credibility and clarity—explaining security film, subcontracting, and training at a glance. The current version is an informational hub, intentionally structured so it can later grow into a full online training platform without a redesign.",
+    // screenshot: require("../assets/projects/wags-window.webp"),
+  },
+  {
+    id: "je-premium-auto-spa",
+    title: "J.E. Premium Auto Spa",
+    subtitle: "Madison County's #1 car window tinting company",
+    role: "Website Design & Build",
+    stack: "Local Services · Auto Spa · Conversion UX",
+    live: "https://jeautospa.com/",
+    story:
+      "J.E. Premium Auto Spa was Stratigo’s first client project in this vertical. Their site is hosted on their own PHP-based platform, so Stratigo’s role focused on the structure and visual design rather than ongoing hosting or marketing. From day one, our goal was to give them a modern, trustworthy digital presence that matched the quality of their in-person service. Any refinements made from today onward are to support their existing platform, and we’re grateful to have helped them take their first steps into a stronger digital brand and online experience.",
+    // screenshot: require("../assets/projects/je-autospa.webp"),
+  },
+];
 
 const Projects = () => {
+  const [activeProject, setActiveProject] = useState(null); // live preview
+  const [activeStoryProject, setActiveStoryProject] = useState(null); // about the website
+
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
       {/* Global Background Decorative Elements */}
@@ -108,46 +149,159 @@ const Projects = () => {
             </Text>
           </div>
 
-          {/* Projects Grid - Placeholder for now */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-4 sm:px-0">
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-electric to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-navy mb-3 sm:mb-4 text-center">Coming Soon</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">
-                We're working on showcasing our amazing projects. Stay tuned for detailed case studies and success stories.
-              </p>
-            </div>
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-4 sm:px-0 items-stretch">
+            {FEATURED_PROJECTS.map((project) => (
+              <article
+                key={project.id}
+                className="group bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-gray-100 h-full flex flex-col"
+              >
+                <div className="relative">
+                  <div className="aspect-[16/10] bg-gradient-to-br from-electric/15 via-blue-500/10 to-navy/40 flex items-center justify-center overflow-hidden rounded-t-xl">
+                    <div className="relative w-[78%] max-w-md">
+                      <div className="bg-slate-900 rounded-[18px] shadow-2xl p-3 border border-slate-700/70">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-300" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          </div>
+                          <span className="text-[10px] uppercase tracking-[0.16em] text-slate-300">
+                            Preview
+                          </span>
+                          <span className="w-6" />
+                        </div>
+                        <div className="bg-slate-800/80 rounded-lg h-24 sm:h-28 md:h-32 overflow-hidden relative">
+                          <div className="absolute inset-0 bg-gradient-to-tr from-electric/20 via-transparent to-white/10" />
+                          <div className="absolute inset-x-4 bottom-3 space-y-1.5">
+                            <div className="h-2.5 w-32 bg-white/60 rounded-full" />
+                            <div className="h-1.5 w-24 bg-white/40 rounded-full" />
+                            <div className="h-1 w-20 bg-white/30 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-navy mb-3 sm:mb-4 text-center">Case Studies</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">
-                Detailed project breakdowns showing our process, challenges overcome, and measurable results achieved.
-              </p>
-            </div>
+                  {/* Hover badge - Live preview */}
+                  <div className="pointer-events-none absolute inset-0 flex items-end justify-start pb-4 pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <button
+                      type="button"
+                      onClick={() => setActiveProject(project)}
+                      className="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-navy text-xs font-semibold shadow-md hover:bg-electric hover:text-white transition-colors"
+                    >
+                      <span>Live preview</span>
+                      <svg
+                        className="w-3.5 h-3.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
 
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
+                <div className="p-5 sm:p-6 md:p-7 flex flex-col gap-3 h-full">
+                  <div className="flex-1 flex flex-col gap-3">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-semibold text-navy mb-1">
+                        {project.title}
+                      </h3>
+                      {project.subtitle && (
+                        <p className="text-sm text-gray-600">
+                          {project.subtitle}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.role && (
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 text-xs font-medium text-blue-700">
+                          {project.role}
+                        </span>
+                      )}
+                      {project.stack && (
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-electric/10 text-xs font-medium text-electric">
+                          {project.stack}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="mt-auto flex items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setActiveStoryProject(project)}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-electric hover:text-electric-dark"
+                    >
+                      <span>About this project</span>
+                      <svg
+                        className="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
+                    </button>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm text-gray-500 hover:text-navy underline-offset-2 hover:underline"
+                      >
+                        Open live site
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+
+            {/* Placeholder cards for upcoming projects */}
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 md:p-7 flex flex-col justify-between border border-dashed border-gray-200 h-full">
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold text-navy mb-2">
+                  More projects coming soon
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  Stratigo case studies and success stories are being crafted
+                  for this section.
+                </p>
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-navy mb-3 sm:mb-4 text-center">Success Stories</h3>
-              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">
-                Real client testimonials and growth metrics demonstrating the impact of our solutions.
+              <p className="mt-4 text-xs sm:text-sm text-gray-500">
+                New sites will appear here with the same premium preview
+                experience.
               </p>
             </div>
           </div>
         </Container>
       </Section>
+
+      {/* Project Preview Modal */}
+      {activeProject && (
+        <ProjectPreviewModal
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
+
+      {/* Project Story Modal */}
+      {activeStoryProject && (
+        <ProjectStoryModal
+          project={activeStoryProject}
+          onClose={() => setActiveStoryProject(null)}
+        />
+      )}
     </div>
   );
 };

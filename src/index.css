@@ -469,4 +469,111 @@ button:focus-visible {
   .search-results-scroll::-webkit-scrollbar-thumb:hover {
     background: #9ca3af;
   }
+
+  /* Control Panel Left Scrollbar Styles */
+  .scrollbar-left {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    direction: rtl;
+  }
+
+  .scrollbar-left > * {
+    direction: ltr;
+  }
+
+  .scrollbar-left::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-left::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-left::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  .scrollbar-left::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .scrollbar-left:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Browser (preview) scrollbar - styled similar to Studio scroll, but on the right */
+  .browser-scroll {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.7) transparent; /* slate-400 on dark bg */
+  }
+
+  .browser-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .browser-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .browser-scroll::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.5);
+    border-radius: 9999px;
+    transition: background 0.2s ease;
+  }
+
+  .browser-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.9);
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  /* Skeleton shimmer animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+  /* Fade in with scale animation for mode switching */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-\[fadeInScale_0\.25s_ease-out_forwards\] {
+    animation: fadeInScale 0.25s ease-out forwards;
+  }
 }

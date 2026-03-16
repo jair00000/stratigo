@@ -24,6 +24,7 @@ const SLA = lazy(() => import("./pages/SLA"));
 const Support = lazy(() => import("./pages/Support"));
 const Checkout = lazy(() => import("./pages/Checkout"));
 const Login = lazy(() => import("./pages/Login"));
+const StratigoStudio = lazy(() => import("./pages/StratigoStudio"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Loading component
@@ -62,6 +63,13 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/studio" element={<StratigoStudio />} />
+            <Route path="/who-we-serve" element={<NotFound />} />
+            <Route path="/process" element={<NotFound />} />
+            <Route path="/case-studies" element={<NotFound />} />
+            <Route path="/accessibility" element={<NotFound />} />
+            <Route path="/do-not-sell" element={<NotFound />} />
+            <Route path="/sitemap" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
