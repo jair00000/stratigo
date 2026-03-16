@@ -457,7 +457,7 @@ const PreviewPanel = ({ artifact, device, websitePatterns, previewImage, panelVi
           className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center bg-white/90 hover:bg-white text-gray-800 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
           aria-label="Show control panel"
         >
-          <span className="text-base font-semibold leading-none">></span>
+          <span className="text-base font-semibold leading-none">{'>'}</span>
         </button>
       )}
       
