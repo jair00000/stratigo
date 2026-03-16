@@ -61,7 +61,7 @@ export function SiteScaffold({ label, themeVars, children, showNav = true, showF
               ...(fillHeight ? { marginTop: 'auto' } : {}),
             }}
           >
-            <span className="text-sm text-white opacity-90">Website Layout</span>
+            <span className="text-sm" style={{ color: 'var(--text)', opacity: 0.9 }}>Website Layout</span>
           </div>
         )}
       </div>

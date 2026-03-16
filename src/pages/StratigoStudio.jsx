@@ -50,8 +50,33 @@ const StratigoStudio = () => {
 
   return (
     <div className="min-h-[calc(100vh-80px)] bg-[#0B1120] flex flex-col">
+      {/* Under construction overlay - small hero + hazard icon + side badge */}
+      <div className="z-30 flex-shrink-0 flex items-stretch border-b border-white/10 bg-black/25 backdrop-blur-sm">
+        <div className="flex-1 flex items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6 py-5 sm:py-6">
+          {/* Yellow hazard triangle with exclamation mark */}
+          <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center bg-amber-400 shadow-lg border border-amber-500/50" aria-hidden>
+            <svg className="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" aria-hidden>
+              {/* Triangle outline */}
+              <path fill="none" stroke="#92400e" strokeWidth="2" strokeLinejoin="round" d="M12 3L2 21h20L12 3z" />
+              {/* Exclamation: vertical bar + dot */}
+              <path fill="#92400e" d="M11 8h2v5h-2zM12 17.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" />
+            </svg>
+          </div>
+          <p className="text-center text-white/95 text-sm sm:text-base font-medium max-w-2xl">
+            <span className="text-white font-semibold">Sorry for the mess</span>
+            {' — '}
+            our Studio is currently under construction. We're still building something great.
+          </p>
+        </div>
+        <div className="flex items-center px-4 sm:px-5 border-l border-white/10 bg-white/5">
+          <span className="text-amber-400 font-bold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">
+            Under construction
+          </span>
+        </div>
+      </div>
+
       {/* Main Content Area - Studio */}
-      <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-80px)] relative overflow-hidden">
+      <div className="flex-1 flex flex-col lg:flex-row min-h-0 relative overflow-hidden">
         {/* Left Preview Panel */}
         <div 
           className={`h-full overflow-hidden transition-all duration-300 ease-in-out ${

@@ -1,6 +1,6 @@
 import React from 'react';
 import RenderWebsitePattern from '../../wireframe/patterns-website';
-import { schemeFromHue } from '../../color/scheme';
+import { buildThemeVars } from '../../utils/theme-vars';
 
 const BROWSER_TITLE_BAR_HEIGHT = 52;
 
@@ -8,7 +8,7 @@ const PreviewPanel = ({ artifact, device, websitePatterns, previewImage, panelVi
   const [imageError, setImageError] = React.useState(false);
   const [contentKey, setContentKey] = React.useState(0);
   const [zoom, setZoom] = React.useState(1);
-  const [theme, setTheme] = React.useState('dark');
+  const [theme, setTheme] = React.useState('light');
   const [showGrid, setShowGrid] = React.useState(false);
   const [previewWidth, setPreviewWidth] = React.useState(1200); // px, adjustable width similar to Projects preview
   const [multiBlockCanvasHeight, setMultiBlockCanvasHeight] = React.useState(720);
@@ -65,17 +65,21 @@ const PreviewPanel = ({ artifact, device, websitePatterns, previewImage, panelVi
   // Realistic placeholder UI blocks with true wireframe content
   const renderPlaceholderUI = () => {
     if (artifact === 'website' && websitePatterns?.length > 0) {
-      // Use provided scheme or default
-      const s = colorTokens || schemeFromHue(210, 60);
-      const styleVars = {
-        '--bg': s.bg,
-        '--panel': s.panel,
-        '--elev': s.elev,
-        '--stroke': s.stroke,
-        '--cta': s.cta,
-        '--accent': s.accent,
-        background: 'var(--bg)'
-      };
+      // Theme-aware vars: buildThemeVars supports light/dark; use theme state so toggle works
+      const styleVars = colorTokens
+        ? {
+            '--bg': colorTokens.bg,
+            '--panel': colorTokens.panel,
+            '--elev': colorTokens.elev,
+            '--stroke': colorTokens.stroke,
+            '--cta': colorTokens.cta,
+            '--accent': colorTokens.accent,
+            '--chrome': colorTokens.panel,
+            '--canvas': colorTokens.bg,
+            '--text': theme === 'light' ? 'hsl(210 18% 12%)' : 'hsl(210 18% 90%)',
+            background: 'var(--bg)',
+          }
+        : { ...buildThemeVars({ baseHue: 210, harmony: 'split', mode: theme }), background: 'var(--bg)' };
       
       const firstPattern = websitePatterns[0];
       const shouldHideNavOnFirst = firstPattern === 'hiddenNav';
@@ -247,7 +251,9 @@ const PreviewPanel = ({ artifact, device, websitePatterns, previewImage, panelVi
             <div
               className="rounded-b-2xl flex-shrink-0"
               style={{
-                background: (colorTokens || schemeFromHue(210, 60)).bg,
+                background: colorTokens
+                  ? colorTokens.bg
+                  : buildThemeVars({ baseHue: 210, harmony: 'split', mode: theme })['--bg'],
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
@@ -365,7 +371,7 @@ const PreviewPanel = ({ artifact, device, websitePatterns, previewImage, panelVi
       const isMultiBlock = websitePatterns.length > 1;
       return (
         <div 
-          key={contentKey}
+          key={`${contentKey}-${theme}`}
           className="w-full h-full transition-all duration-250 ease-out opacity-0 scale-95 data-[enter=true]:opacity-100 data-[enter=true]:scale-100"
           data-enter={true}
         >
