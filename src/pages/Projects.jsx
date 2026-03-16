@@ -40,6 +40,16 @@ const FEATURED_PROJECTS = [
       "J.E. Premium Auto Spa was Stratigo’s first client project in this vertical. Their site is hosted on their own PHP-based platform, so Stratigo’s role focused on the structure and visual design rather than ongoing hosting or marketing. From day one, our goal was to give them a modern, trustworthy digital presence that matched the quality of their in-person service. Any refinements made from today onward are to support their existing platform, and we’re grateful to have helped them take their first steps into a stronger digital brand and online experience.",
     // screenshot: require("../assets/projects/je-autospa.webp"),
   },
+  {
+    id: "jj-window-home-solutions",
+    title: "J&J Window & Home Solutions INC.",
+    subtitle: "Illinois & surrounding states · Windows, doors & home solutions",
+    role: "Website Design & Build",
+    stack: "New Build · Local Services · Marketing",
+    live: null,
+    story:
+      "J&J Window & Home Solutions INC. is a new Stratigo project focused on the surrounding cities of Illinois and neighboring states. We're building a modern, conversion-driven website for their window and home solutions business, with marketing implementation built in—so they can reach homeowners across the region, explain services clearly, and grow through targeted campaigns. The site will support the same premium preview and storytelling experience we bring to every project.",
+  },
 ];
 
 const Projects = () => {
@@ -183,7 +193,8 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Hover badge - Live preview */}
+                  {/* Hover badge - Live preview (only when project has live URL) */}
+                  {project.live && (
                   <div className="pointer-events-none absolute inset-0 flex items-end justify-start pb-4 pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <button
                       type="button"
@@ -205,6 +216,7 @@ const Projects = () => {
                       </svg>
                     </button>
                   </div>
+                  )}
                 </div>
 
                 <div className="p-5 sm:p-6 md:p-7 flex flex-col gap-3 h-full">
@@ -236,7 +248,7 @@ const Projects = () => {
                     <button
                       type="button"
                       onClick={() => setActiveStoryProject(project)}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-electric hover:text-electric-dark"
+                      className="inline-flex items-center gap-2 text-sm font-semibold bg-white text-electric border-2 border-electric rounded-full py-2.5 px-5 shadow-sm hover:bg-navy hover:text-white hover:border-navy hover:shadow-md hover:ring-2 hover:ring-electric/40 hover:ring-offset-1 transition-all duration-200"
                     >
                       <span>About this project</span>
                       <svg
@@ -266,23 +278,6 @@ const Projects = () => {
                 </div>
               </article>
             ))}
-
-            {/* Placeholder cards for upcoming projects */}
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 md:p-7 flex flex-col justify-between border border-dashed border-gray-200 h-full">
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-navy mb-2">
-                  More projects coming soon
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600">
-                  Stratigo case studies and success stories are being crafted
-                  for this section.
-                </p>
-              </div>
-              <p className="mt-4 text-xs sm:text-sm text-gray-500">
-                New sites will appear here with the same premium preview
-                experience.
-              </p>
-            </div>
           </div>
         </Container>
       </Section>
